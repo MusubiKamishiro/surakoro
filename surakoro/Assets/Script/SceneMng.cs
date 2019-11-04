@@ -29,6 +29,6 @@ public class SceneMng : MonoBehaviour
 
     void ChangeScene()
     {
-        mSceneMng
+        // mSceneMng
     }
 }
