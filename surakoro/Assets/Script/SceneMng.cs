@@ -14,11 +14,11 @@ public class SceneMng : MonoBehaviour
     }
     Button mStartButton;
     SCENE mScene;
-    SceneManager mSceneMng;
     // Start is called before the first frame update
     void Start()
     {
-        mScene = SCENE.TITLE_SCENE;
+        //mScene = SCENE.TITLE_SCENE;
+        
     }
 
     // Update is called once per frame
@@ -27,8 +27,9 @@ public class SceneMng : MonoBehaviour
         
     }
 
-    void ChangeScene()
+    public void MoveScene()
     {
-        mSceneMng
+        Debug.Log("シーン遷移");
+        //SceneManager.LoadScene(SceneManager);
     }
 }
