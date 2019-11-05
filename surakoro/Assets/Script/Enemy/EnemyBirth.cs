@@ -8,13 +8,16 @@ using UnityEngine;
 
 public class EnemyBirth : MonoBehaviour
 {
-    int count;          // 敵が出てくる間の時間
+    float count;        // 敵が出てくる間の時間
 
     [SerializeField]
     GameObject enemy;   // 箱から出現させたい敵
 
     [SerializeField]
-    int count_max;      // 敵が出てくる間の時間（上限）
+    float countMax;     // 敵が出てくる間の時間（上限）
+
+    [SerializeField]
+    int allEnemyMax;    // 全体で敵が出てくる数の上限
 
     // Use this for initialization
     void Start()
@@ -24,15 +27,19 @@ public class EnemyBirth : MonoBehaviour
 
     void Update()
     {
-        count++;
         // 出るかどうかのためし
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Cubeプレハブを元に、インスタンスを生成、
             Instantiate(enemy, this.transform.position, Quaternion.identity);
         }
+        //敵が上限にいってないか
+        if(GameObject.FindGameObjectsWithTag("Enemy").Length < allEnemyMax)
+        {
+            count += Time.deltaTime;
+        }
         // カウントでどれくらいの感覚で出てくるか
-        if(count >= count_max)
+        if(count >= countMax)
         {
             // Cubeプレハブを元に、インスタンスを生成
             Instantiate(enemy, this.transform.position, Quaternion.identity);
