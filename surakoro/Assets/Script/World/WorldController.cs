@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//-------------------------------------------------------------------------//
+// ワールドの回転操作
+//                                                     Yutaro Ono.
+//------------------------------------------------------------------------//
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
