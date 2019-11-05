@@ -2749,7 +2749,7 @@ PrefabInstance:
     - target: {fileID: 1174784948576823560, guid: 505eacea76af90e4b99b0742ee71fd74,
         type: 3}
       propertyPath: count_max
-      value: 500
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 505eacea76af90e4b99b0742ee71fd74, type: 3}
@@ -2950,7 +2950,7 @@ Transform:
   m_GameObject: {fileID: 2045216101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children:
   - {fileID: 403285513}
   - {fileID: 2138862116}
@@ -3397,6 +3397,16 @@ PrefabInstance:
     - target: {fileID: 2896653334532208949, guid: 2829ebd2ccae0514aa60e584174f9eae,
         type: 3}
       propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653636551704183173, guid: 2829ebd2ccae0514aa60e584174f9eae,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263793024018816781, guid: 2829ebd2ccae0514aa60e584174f9eae,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
