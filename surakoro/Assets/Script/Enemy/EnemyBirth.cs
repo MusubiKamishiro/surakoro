@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿// EnemyBirth専用
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAppears : MonoBehaviour
+public class EnemyBirth : MonoBehaviour
 {
     int count;          // 敵が出てくる間の時間
 
@@ -25,13 +27,13 @@ public class EnemyAppears : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Cubeプレハブを元に、インスタンスを生成、
-            Instantiate(enemy, transform.position, Quaternion.identity);
+            Instantiate(enemy, this.transform.position, Quaternion.identity);
         }
         // カウントでどれくらいの感覚で出てくるか
         if(count >= count_max)
         {
             // Cubeプレハブを元に、インスタンスを生成
-            Instantiate(enemy, transform.position, Quaternion.identity);
+            Instantiate(enemy, this.transform.position, Quaternion.identity);
             count = 0;
         }
     }
