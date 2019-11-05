@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class Sound : MonoBehaviour
 {
 
     [SerializeField]
@@ -23,7 +23,7 @@ public class Test : MonoBehaviour
     void Update()
     {
         // スペース
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             //SEを鳴らす
             audioSource.PlayOneShot(sound1);

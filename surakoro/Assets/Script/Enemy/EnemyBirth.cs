@@ -1,5 +1,7 @@
-﻿// EnemyBirth専用
-
+﻿//*********************
+// EnemyBirth.cs
+// EnemyBirth専用
+//*********************
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
