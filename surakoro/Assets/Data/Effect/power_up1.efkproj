@@ -78,7 +78,7 @@
               </Fixed>
             </ScalingValues>
             <RendererCommonValues>
-              <ColorTexture>../Texture/Particle01.png</ColorTexture>
+              <ColorTexture>Texture/Particle01.png</ColorTexture>
               <AlphaBlend>2</AlphaBlend>
               <FadeInType>1</FadeInType>
               <FadeIn>
@@ -117,7 +117,7 @@
               </Fixed>
             </ScalingValues>
             <RendererCommonValues>
-              <ColorTexture>../Texture/Particle01.png</ColorTexture>
+              <ColorTexture>Texture/Particle01.png</ColorTexture>
               <AlphaBlend>2</AlphaBlend>
               <FadeInType>1</FadeInType>
               <FadeIn>
@@ -195,7 +195,7 @@
           </PVA>
         </ScalingValues>
         <RendererCommonValues>
-          <ColorTexture>../Texture/Particle01.png</ColorTexture>
+          <ColorTexture>Texture/Particle01.png</ColorTexture>
           <AlphaBlend>2</AlphaBlend>
           <FadeInType>1</FadeInType>
           <FadeIn>
