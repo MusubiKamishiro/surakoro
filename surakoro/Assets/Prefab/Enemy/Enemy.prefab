@@ -122,3 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac29ef5a52a5f844b377e94f58fb6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 6041984170882861350, guid: e57073e7555a99d4e99f55164c2616de,
+    type: 3}
+  effectGoul: {fileID: 8982617803220219579, guid: 31666941c30653e42a8dfda06d4bd215,
+    type: 3}

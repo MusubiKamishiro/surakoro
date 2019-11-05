@@ -329,18 +329,17 @@
                 <ColorAll>1</ColorAll>
                 <ColorAll_Random>
                   <R>
-                    <Center>27</Center>
-                    <Max>17</Max>
-                    <Min>24</Min>
+                    <Center>19</Center>
+                    <Max>0</Max>
+                    <Min>28</Min>
                     <DrawnAs>0</DrawnAs>
                   </R>
                   <G>
-                    <Max>224</Max>
-                    <Min>232</Min>
+                    <Center>239</Center>
+                    <Max>216</Max>
                     <DrawnAs>0</DrawnAs>
                   </G>
                   <B>
-                    <Center>249</Center>
                     <DrawnAs>0</DrawnAs>
                   </B>
                   <A>
@@ -455,10 +454,20 @@
               <G>64</G>
             </ColorAll_Fixed>
             <ColorAll_Random>
+              <R>
+                <DrawnAs>0</DrawnAs>
+              </R>
+              <G>
+                <DrawnAs>0</DrawnAs>
+              </G>
+              <B>
+                <DrawnAs>0</DrawnAs>
+              </B>
               <A>
                 <Center>48</Center>
                 <Max>64</Max>
                 <Min>32</Min>
+                <DrawnAs>0</DrawnAs>
               </A>
               <DrawnAs>0</DrawnAs>
             </ColorAll_Random>
