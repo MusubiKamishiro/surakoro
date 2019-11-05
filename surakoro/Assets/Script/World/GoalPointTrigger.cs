@@ -13,7 +13,7 @@ public class GoalPointTrigger : MonoBehaviour
     // プレイヤーが触れたらリザルトへ
     private void OnTriggerEnter(Collider other)
     {
-        if(gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("ResultScene");
         }
