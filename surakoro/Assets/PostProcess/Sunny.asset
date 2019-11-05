@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-47804340268143935
+--- !u!114 &-4978509153498108374
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27,7 +27,168 @@ MonoBehaviour:
     value: 1
   lumContrib:
     overrideState: 1
-    value: 0.8
+    value: 0.808
+--- !u!114 &-3456010786269697615
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 40
+  threshold:
+    overrideState: 1
+    value: 0
+  softKnee:
+    overrideState: 0
+    value: 0.5
+  clamp:
+    overrideState: 0
+    value: 65472
+  diffusion:
+    overrideState: 0
+    value: 7
+  anamorphicRatio:
+    overrideState: 0
+    value: 0
+  color:
+    overrideState: 0
+    value: {r: 1, g: 1, b: 1, a: 1}
+  fastMode:
+    overrideState: 0
+    value: 0
+  dirtTexture:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  dirtIntensity:
+    overrideState: 0
+    value: 0
+--- !u!114 &-2736726482176737721
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
+  m_Name: AutoExposure
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  filtering:
+    overrideState: 0
+    value: {x: 50, y: 95}
+  minLuminance:
+    overrideState: 1
+    value: 0
+  maxLuminance:
+    overrideState: 0
+    value: 9
+  keyValue:
+    overrideState: 1
+    value: 0
+  eyeAdaptation:
+    overrideState: 0
+    value: 0
+  speedUp:
+    overrideState: 0
+    value: 2
+  speedDown:
+    overrideState: 0
+    value: 1
+--- !u!114 &-1721363012245713909
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
+  m_Name: AmbientOcclusion
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 0
+    value: 1
+  intensity:
+    overrideState: 0
+    value: 0
+  color:
+    overrideState: 0
+    value: {r: 0, g: 0, b: 0, a: 1}
+  ambientOnly:
+    overrideState: 0
+    value: 1
+  noiseFilterTolerance:
+    overrideState: 0
+    value: 0
+  blurTolerance:
+    overrideState: 0
+    value: -4.6
+  upsampleTolerance:
+    overrideState: 0
+    value: -12
+  thicknessModifier:
+    overrideState: 0
+    value: 1
+  directLightingStrength:
+    overrideState: 0
+    value: 0
+  radius:
+    overrideState: 0
+    value: 0.25
+  quality:
+    overrideState: 0
+    value: 2
+--- !u!114 &-349906639494308461
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 0
+    value: 192.01
+  aperture:
+    overrideState: 0
+    value: 5.6
+  focalLength:
+    overrideState: 0
+    value: 50
+  kernelSize:
+    overrideState: 0
+    value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,14 +199,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: PostProcessVolume Profile
+  m_Name: Sunny
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 786673349666415705}
-  - {fileID: 3234799838320549436}
-  - {fileID: -47804340268143935}
-  - {fileID: 6820247051843009101}
---- !u!114 &786673349666415705
+  - {fileID: 6363765680994474649}
+  - {fileID: 7017740327698969008}
+  - {fileID: -4978509153498108374}
+  - {fileID: -3456010786269697615}
+  - {fileID: -349906639494308461}
+  - {fileID: -2736726482176737721}
+  - {fileID: -1721363012245713909}
+--- !u!114 &6363765680994474649
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,7 +246,7 @@ MonoBehaviour:
   vignette:
     overrideState: 0
     value: 0.5
---- !u!114 &3234799838320549436
+--- !u!114 &7017740327698969008
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,25 +271,25 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 0
+    value: 3
   toneCurveToeStrength:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   toneCurveToeLength:
-    overrideState: 0
-    value: 0.5
+    overrideState: 1
+    value: 1
   toneCurveShoulderStrength:
-    overrideState: 0
+    overrideState: 1
     value: 0
   toneCurveShoulderLength:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
   toneCurveShoulderAngle:
-    overrideState: 0
+    overrideState: 1
     value: 0
   toneCurveGamma:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 2
   ldrLut:
     overrideState: 0
     value: {fileID: 0}
@@ -135,31 +299,31 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 0
+    value: -80
   tint:
     overrideState: 1
-    value: 0
+    value: 100
   colorFilter:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 3.1046026, g: 3.1046026, b: 3.1046026, a: 1}
   hueShift:
     overrideState: 1
     value: 0
   saturation:
     overrideState: 1
-    value: 0
+    value: 100
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: 0
+    value: 3.5
   contrast:
     overrideState: 1
-    value: 0
+    value: 16
   mixerRedOutRedIn:
     overrideState: 1
-    value: 100
+    value: 0
   mixerRedOutGreenIn:
     overrideState: 1
     value: 0
@@ -186,13 +350,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 1, y: 0.34617496, z: 0.8502132, w: 0.7717042}
+    value: {x: 1, y: 0.4031678, z: 0.33991104, w: -1}
   gamma:
     overrideState: 1
-    value: {x: 1, y: 0.26339424, z: 0.56935257, w: 0.4180064}
+    value: {x: 1, y: 0.37133336, z: 0.542178, w: 1}
   gain:
     overrideState: 1
-    value: {x: 1, y: 0, z: 0.31177282, w: 1}
+    value: {x: 1, y: 0.025946546, z: 0, w: 1}
   masterCurve:
     overrideState: 0
     value:
@@ -830,7 +994,7 @@ MonoBehaviour:
       - 0.984375
       - 0.9921875
   hueVsHueCurve:
-    overrideState: 0
+    overrideState: 1
     value:
       curve:
         serializedVersion: 2
@@ -1116,7 +1280,25 @@ MonoBehaviour:
     value:
       curve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.29909366
+          value: 0.3076923
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.9123867
+          value: 0.5897436
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -1124,136 +1306,136 @@ MonoBehaviour:
       m_ZeroValue: 0.5
       m_Range: 1
       cachedData:
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
-      - 0.5
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.3076923
+      - 0.30776227
+      - 0.30809072
+      - 0.30868182
+      - 0.3095285
+      - 0.3106238
+      - 0.31196073
+      - 0.31353226
+      - 0.31533146
+      - 0.31735125
+      - 0.3195847
+      - 0.32202476
+      - 0.32466447
+      - 0.32749686
+      - 0.33051485
+      - 0.3337115
+      - 0.33707982
+      - 0.3406128
+      - 0.34430343
+      - 0.34814474
+      - 0.35212973
+      - 0.35625136
+      - 0.3605027
+      - 0.3648767
+      - 0.36936638
+      - 0.37396476
+      - 0.3786648
+      - 0.38345957
+      - 0.38834202
+      - 0.39330518
+      - 0.39834207
+      - 0.40344563
+      - 0.4086089
+      - 0.41382492
+      - 0.41908664
+      - 0.42438707
+      - 0.42971927
+      - 0.43507615
+      - 0.4404508
+      - 0.44583616
+      - 0.45122528
+      - 0.45661116
+      - 0.46198675
+      - 0.46734512
+      - 0.47267923
+      - 0.4779821
+      - 0.48324674
+      - 0.48846614
+      - 0.49363333
+      - 0.49874127
+      - 0.503783
+      - 0.5087515
+      - 0.5136398
+      - 0.5184409
+      - 0.5231477
+      - 0.5277534
+      - 0.5322509
+      - 0.53663313
+      - 0.5408932
+      - 0.5450241
+      - 0.5490188
+      - 0.55287033
+      - 0.5565716
+      - 0.5601158
+      - 0.56349576
+      - 0.56670463
+      - 0.5697352
+      - 0.5725807
+      - 0.57523406
+      - 0.5776882
+      - 0.57993627
+      - 0.58197117
+      - 0.5837859
+      - 0.58537346
+      - 0.5867269
+      - 0.58783925
+      - 0.5887034
+      - 0.5893125
+      - 0.58965945
+      - 0.5897436
+      - 0.5897436
+      - 0.5897436
+      - 0.5897436
+      - 0.5897436
+      - 0.5897436
+      - 0.5897436
+      - 0.5897436
+      - 0.5897436
+      - 0.5897436
+      - 0.5897436
   lumVsSatCurve:
-    overrideState: 0
+    overrideState: 1
     value:
       curve:
         serializedVersion: 2
@@ -1393,50 +1575,3 @@ MonoBehaviour:
       - 0.5
       - 0.5
       - 0.5
---- !u!114 &6820247051843009101
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  intensity:
-    overrideState: 1
-    value: 0
-  threshold:
-    overrideState: 1
-    value: 1
-  softKnee:
-    overrideState: 1
-    value: 0.5
-  clamp:
-    overrideState: 0
-    value: 65472
-  diffusion:
-    overrideState: 0
-    value: 7
-  anamorphicRatio:
-    overrideState: 0
-    value: 0
-  color:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
-  fastMode:
-    overrideState: 0
-    value: 0
-  dirtTexture:
-    overrideState: 0
-    value: {fileID: 0}
-    defaultState: 1
-  dirtIntensity:
-    overrideState: 0
-    value: 0
