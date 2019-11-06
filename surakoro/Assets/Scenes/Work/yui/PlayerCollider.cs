@@ -19,6 +19,8 @@ public class PlayerCollider : MonoBehaviour
 	public const int addScore = 100;	// 加算スコア
 	private List<bool> wallBreakFlag = new List<bool>();
 	private int wallNum = 5;
+    [SerializeField]
+    CameraMng cameraMng;
 
 	Score score = new Score();
 
@@ -104,6 +106,8 @@ public class PlayerCollider : MonoBehaviour
 			if (transform.localScale.x >= (Player.FindObjectOfType<Player>().GetGrowingSize().x * (i + 1)))
 			{
 				wallBreakFlag[i] = true;
+                cameraMng.ZoomOut(i);
+                
 			}
 		}
 	}

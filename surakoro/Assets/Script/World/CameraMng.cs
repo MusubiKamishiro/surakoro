@@ -8,8 +8,14 @@ public class CameraMng : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private Camera mCamera;
+    private float[] zoomOutSize;
+    private int currentZoomSize =0;
+    private const int wallBreakNum = 3; //壊れる壁の数
     void Start()
     {
+        
+        zoomOutSize = new float[wallBreakNum] { 55,155,300 };
+        
     }
 
     // Update is called once per frame
@@ -19,9 +25,14 @@ public class CameraMng : MonoBehaviour
         //ZoomOut(25f);
     }
     
-    public void ZoomOut(float changedSize)
+    //ステージ変える時ズームアウトする
+    public void ZoomOut(int idx)
     {
-        var sizeNow = mCamera.orthographicSize;
-        mCamera.orthographicSize = Mathf.Lerp(sizeNow, changedSize, 0.3f * Time.deltaTime);
+        if (idx < wallBreakNum && idx >= currentZoomSize)
+        {
+            var sizeNow = mCamera.orthographicSize;
+            mCamera.orthographicSize = Mathf.Lerp(sizeNow, zoomOutSize[idx], 0.5f * Time.deltaTime);
+            currentZoomSize = idx;
+        }
     }
 }
