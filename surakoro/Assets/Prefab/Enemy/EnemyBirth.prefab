@@ -105,5 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49becaaa8a65f54dafd51e85810a721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 2896653334532208951, guid: 2829ebd2ccae0514aa60e584174f9eae, type: 3}
-  count_max: 100
+  enemy: {fileID: 7456365886191929263, guid: 2829ebd2ccae0514aa60e584174f9eae, type: 3}
+  countMax: 0
+  allEnemyMax: 0

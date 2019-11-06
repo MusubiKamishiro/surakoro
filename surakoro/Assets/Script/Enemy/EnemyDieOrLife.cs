@@ -9,10 +9,10 @@ using UnityEngine;
 public class EnemyDieOrLife : MonoBehaviour
 {
     [SerializeField]
-    GameObject effectPrefab;   // 敵が死んだとき、胃袋に飛ばすときのエフェクト
+    GameObject effectPrefab;    // 敵が死んだとき、胃袋に飛ばすときのエフェクト
 
     [SerializeField]
-    GameObject effectGoul;   // 上のエフェクトのゴール
+    GameObject stomachFloor;     // 胃の床
 
     Vector3 bitween;
     bool dieFlag;
@@ -26,24 +26,32 @@ public class EnemyDieOrLife : MonoBehaviour
         stomachInFlag = false;
     }
 
-    void Update()
+    void OnCollisionStay(Collision other)
     {
-        // 下に落ちすぎたら
-        if (this.transform.position.y < -15 && !dieFlag)
+        // プレイヤーに当たった瞬間
+        if (other.gameObject.tag == "Player" && !dieFlag)
         {
-            // これにエフェクトをつける
+            // エネミーにエフェクトをつける
             effect = Instantiate(effectPrefab) as GameObject;
+            // 飛んでくフラグを立てる
             dieFlag = true;
         }
-        if(dieFlag && !stomachInFlag)
+    }
+
+    void Update()
+    {
+
+        if (dieFlag && !stomachInFlag)
         {
             this.GetComponent<Rigidbody>().useGravity = false;
             effect.transform.position = this.transform.position;
-            this.transform.position += Vector3.up/2;
-            if((effectGoul.transform.position - this.transform.position).magnitude < 1)
+            this.transform.position += new Vector3(0.0f, 1.0f, 1.0f).normalized;
+            if (this.transform.position.y > 100 || this.transform.position.y < -100)
             {
+                Destroy(effect);
                 stomachInFlag = true;
                 this.GetComponent<Rigidbody>().useGravity = true;
+                this.transform.position = stomachFloor.transform.position + new Vector3(0.0f, 50.0f, 0.0f);
             }
         }
     }
