@@ -21,11 +21,11 @@ MonoBehaviour:
   - path: Texture/Star.png
     texture: {fileID: 2800000, guid: 327313e9cb19a294e84b957d32c02200, type: 3}
   - path: Texture/Wind.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: f7409e69a682cf44babece6b67b23613, type: 3}
   - path: Texture/Yakiniku.png
     texture: {fileID: 2800000, guid: c1aeaffa924c60645b2a20663d6fa00e, type: 3}
   - path: Texture/Wind.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: f7409e69a682cf44babece6b67b23613, type: 3}
   soundResources: []
   modelResources: []
   Scale: 1
