@@ -9,24 +9,20 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    // エネミーのAnimator取得
-    private Animator mAnim;
+
+    // エネミーのRigidBody格納用
+    private Rigidbody mRb;
 
 
     // エネミーの移動制御用タイマー
     float moveTimer;
 
-    // 接地状態か調べるためのCharacterController
-    private CharacterController charaCtrl;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        // Animator取得
-        mAnim = GetComponent<Animator>();
-        // CharacterController取得
-        charaCtrl = GetComponent<CharacterController>();
+        // RigidBody取得
+        mRb = GetComponent<Rigidbody>();
 
         moveTimer = 0.0f;
     }
@@ -35,19 +31,15 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
 
-        if(charaCtrl.isGrounded == false)
+
+        // タイマーが5秒以上になったらエネミーを移動させる
+        if (moveTimer >= 3.0f)
         {
-            mAnim.enabled = false;
-        }
+            // エネミーの移動量
+            Vector3 enemyMove = new Vector3(Random.Range(-7.0f, 7.0f), 3.5f, 0.0f);
 
-        if(moveTimer <= 5.0f && charaCtrl.isGrounded)
-        {
-            mAnim.enabled = true;
-
-            float rand = Random.Range(-1.0f, 1.0f);
-
-            // ランダムでアニメーション設定
-            mAnim.SetFloat("Move", rand);
+            // エネミーの移動
+            mRb.AddForce(enemyMove, ForceMode.Impulse);
 
             // タイマー初期化
             moveTimer = 0.0f;
@@ -55,7 +47,7 @@ public class EnemyAI : MonoBehaviour
         }
 
 
-
+        // タイマーの更新
         moveTimer += Time.deltaTime;
     }
 }

@@ -1211,7 +1211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mPauseMenuUI: {fileID: 0}
   mGameUI: {fileID: 0}
-  mfadeImage: {fileID: 1227247209}
 --- !u!4 &1201383907
 Transform:
   m_ObjectHideFlags: 0
