@@ -80,7 +80,7 @@ public class PlayerCollider : MonoBehaviour
 					score.Add(addScore);
 				}
 				++totalEatNum;
-				Destroy(collision.gameObject);
+				// Destroy(collision.gameObject);
 				Debug.Log(mEnemyColor.ToString() + "と接触");
 			}
 		}
