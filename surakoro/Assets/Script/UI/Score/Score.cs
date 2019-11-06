@@ -8,6 +8,9 @@ public class Score : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+        // シーン遷移によるオブジェクト破棄をしない
+        DontDestroyOnLoad(this.gameObject);
+
 		score = 0;
 	}
 

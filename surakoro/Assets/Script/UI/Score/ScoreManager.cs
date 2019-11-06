@@ -20,6 +20,8 @@ public class ScoreManager : MonoBehaviour
     private float mMagnif;
 
 
+    Score mScore;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,7 @@ public class ScoreManager : MonoBehaviour
         // スコアのtextオブジェクトからTextコンポーネントを取得
         Text scoreText = displayObj.GetComponent<Text>();
 
-        scoreText.text += score;
+        scoreText.text = "" + score;
 
         
     }

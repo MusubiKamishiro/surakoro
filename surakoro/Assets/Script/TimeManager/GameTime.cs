@@ -58,7 +58,7 @@ public class GameTime : MonoBehaviour
 			Debug.Log("終了～");
 			if (Time.time > stackSecond)
 			{
-				SceneManager.LoadScene("testScene");
+				SceneManager.LoadScene("ResultScene 1");
 			}
 		}
 	}
