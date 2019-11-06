@@ -17,6 +17,7 @@ public class EnemyDieOrLife : MonoBehaviour
     Vector3 bitween;
     bool dieFlag;
     bool stomachInFlag;
+    float dieTime;
     GameObject effect;
 
     void Start()
@@ -24,6 +25,7 @@ public class EnemyDieOrLife : MonoBehaviour
         bitween = Vector3.zero;
         dieFlag = false;
         stomachInFlag = false;
+        dieTime = 0.0f;
     }
 
     void OnCollisionStay(Collision other)
@@ -46,7 +48,8 @@ public class EnemyDieOrLife : MonoBehaviour
             this.GetComponent<Rigidbody>().useGravity = false;
             effect.transform.position = this.transform.position;
             this.transform.position += new Vector3(0.0f, 1.0f, 1.0f).normalized;
-            if (this.transform.position.y > 100 || this.transform.position.y < -100)
+            dieTime += Time.deltaTime;
+            if (dieTime > 5.0f)
             {
                 Destroy(effect);
                 stomachInFlag = true;

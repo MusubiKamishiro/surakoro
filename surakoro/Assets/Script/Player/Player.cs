@@ -9,8 +9,9 @@ public class Player : MonoBehaviour
 	private List<bool> giantFlag = new List<bool>();		// 巨大化の段階
 	private List<int> wallBreakCounts = new List<int>();
 	private float secondCount = 0;
+    Rigidbody rigidbody;
 
-	public Vector3 GetGrowingSize()
+    public Vector3 GetGrowingSize()
 	{
 		return growingSize;
 	}
@@ -22,13 +23,33 @@ public class Player : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
 		PlayerCollider pc = FindObjectOfType<PlayerCollider>();
-		for (int i = 0; i < pc.GetWallNum(); ++i)
+        for (int i = 0; i < pc.GetWallNum(); ++i)
 		{
 			giantFlag.Add(true);
 			wallBreakCounts.Add((i + 1) * 10);
 		}
 	}
+
+    private void FixedUpdate()
+    {
+        SetLocalGravity(); //重力をAddForceでかけるメソッドを呼ぶ。FixedUpdateが好ましい。
+    }
+
+    private void SetLocalGravity()
+    {
+        float grav;
+        if (giantFlag[4])
+        {
+            grav = -50.0f;
+        }
+        else
+        {
+            grav = -30.0f;
+        }
+        rigidbody.AddForce(new Vector3(0.0f, -50.0f, 0.0f), ForceMode.Acceleration);
+    }
 
     // Update is called once per frame
     void Update()

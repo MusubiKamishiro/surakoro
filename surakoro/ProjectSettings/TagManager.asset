@@ -15,6 +15,10 @@ TagManager:
   - Wall3
   - Wall4
   - Wall5
+  - RedScore
+  - BrueScore
+  - GreenScore
+  - YellowScore
   layers:
   - Default
   - TransparentFX
