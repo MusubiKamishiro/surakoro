@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3106394417573311341}
   - component: {fileID: 4107515013386825831}
   - component: {fileID: 3617085450004538043}
+  - component: {fileID: 2834545059721044494}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Red
@@ -140,3 +141,22 @@ MonoBehaviour:
     type: 3}
   stomachFloor: {fileID: 2562210429971975390, guid: abceee0bb2842384fbb8c6914f6da46b,
     type: 3}
+--- !u!95 &2834545059721044494
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252704557912112677}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0a50c0c591ec5044b494f868f7e078d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
