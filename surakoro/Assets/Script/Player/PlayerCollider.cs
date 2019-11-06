@@ -14,7 +14,7 @@ public class PlayerCollider : MonoBehaviour
 	};
 
 	private EnemyColor oldEnemyColor = EnemyColor.max;    // 最後に食べた敵の色
-	private int totalEatNum = 0;			// 敵を食べた総数
+	private int totalEatNum = 0;		// 敵を食べた総数
 	private int combo = 0;				// コンボ, 同じ色が連続で消えた場合
 	public const int addScore = 100;	// 加算スコア
 	private List<bool> wallBreakFlag = new List<bool>();
@@ -30,6 +30,10 @@ public class PlayerCollider : MonoBehaviour
 	public int GetCombo()
 	{
 		return combo;
+	}
+	public int GetWallNum()
+	{
+		return wallNum;
 	}
 	public EnemyColor GetEnemyColor()
 	{
@@ -60,6 +64,8 @@ public class PlayerCollider : MonoBehaviour
 		}
 	}
 
+	
+	// 敵を食べて得点を得る
 	void EatEnemy(Collision collision)
 	{
 		for (int i = 0; i < (int)EnemyColor.max; ++i)
@@ -80,8 +86,8 @@ public class PlayerCollider : MonoBehaviour
 					score.Add(addScore);
 				}
 				++totalEatNum;
-				// Destroy(collision.gameObject);
 				Debug.Log(mEnemyColor.ToString() + "と接触");
+				Destroy(collision.gameObject);
 			}
 		}
 		Debug.Log(combo + "コンボ");
@@ -99,9 +105,11 @@ public class PlayerCollider : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		for(int i = 0; i < wallNum; ++i)
+		// 自機の巨大化状況で壁を吹き飛ばす
+		Player mP = Player.FindObjectOfType<Player>();
+		for (int i = 0; i < wallNum; ++i)
 		{
-			if (transform.localScale.x >= (Player.FindObjectOfType<Player>().GetGrowingSize().x * (i + 1)))
+			if(!mP.GetGiantFlag(i))
 			{
 				wallBreakFlag[i] = true;
 			}

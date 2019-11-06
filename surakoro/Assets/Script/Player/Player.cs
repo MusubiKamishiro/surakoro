@@ -1,29 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     private float speed = 1.5f;     // デバッグ用のプレイヤー移動速度
-    private Vector3 growingSize = new Vector3(20, 20, 0);	// 敵を食べて大きくなるサイズ
-	private List<bool> giantFlag = new List<bool>();
+    public Vector3 growingSize = new Vector3(20, 20, 0);	// 敵を食べて大きくなるサイズ
+	private List<bool> giantFlag = new List<bool>();		// 巨大化の段階
 	private List<int> wallBreakCounts = new List<int>();
-	private int count = 0;
-
-	public int firstWallBreakCount = 5;
-	public int second = 8;
-	private bool gFlag = true;
+	private float secondCount = 0;
 
 	public Vector3 GetGrowingSize()
 	{
 		return growingSize;
 	}
+	public bool GetGiantFlag(int i)
+	{
+		return giantFlag[i];
+	}
 
 	// Start is called before the first frame update
 	void Start()
     {
-		for (int i = 0; i < 5; ++i)
+		PlayerCollider pc = FindObjectOfType<PlayerCollider>();
+		for (int i = 0; i < pc.GetWallNum(); ++i)
 		{
 			giantFlag.Add(true);
 			wallBreakCounts.Add((i + 1) * 5);
@@ -33,18 +33,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // デバッグ用の移動
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-        }
-
+     	// 特定の大きさになったら壁を破壊する
 		PlayerCollider pc = FindObjectOfType<PlayerCollider>();
-		for(int i = 0; i < 5; ++i)
+		for(int i = 0; i < pc.GetWallNum(); ++i)
 		{
 			if (pc.GetTotalEatNum() > wallBreakCounts[i])
 			{
@@ -56,14 +47,16 @@ public class Player : MonoBehaviour
 		}
     }
 
-    void Giant(int ccount)
+	// プレイヤーの巨大化
+    void Giant(int count)
     {
         transform.localScale += growingSize / 60;
-        if (count > 60)
+        if (secondCount > 1)
         {
-            giantFlag[ccount] = false;
-            count = 0;
+            giantFlag[count] = false;
+			growingSize *= 2;
+			secondCount = 0;
 		}
-        ++count;
+		secondCount += Time.deltaTime;
     }
 }
