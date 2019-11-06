@@ -87,7 +87,7 @@ public class PlayerCollider : MonoBehaviour
 				}
 				++totalEatNum;
 				Debug.Log(mEnemyColor.ToString() + "と接触");
-				Destroy(collision.gameObject);
+				// Destroy(collision.gameObject);
 			}
 		}
 		Debug.Log(combo + "コンボ");
