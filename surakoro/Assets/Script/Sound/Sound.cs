@@ -9,8 +9,8 @@ using UnityEngine;
 public class Sound : MonoBehaviour
 {
 
-    //[SerializeField]
-    //AudioClip soundEffect;           // SEの音源
+    [SerializeField]
+    AudioClip extraEffect;           // SEの音源
 
     AudioSource audioSource;    // SEを鳴らす用
 
@@ -32,8 +32,16 @@ public class Sound : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-         Destroy(col.gameObject);
-         audioSource.PlayOneShot(audioSource.clip);
-        
+
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            audioSource.PlayOneShot(audioSource.clip);
+        }
+        else
+        {
+            Debug.Log("extraSound"); 
+            //audioSource.PlayOneShot(extraEffect);
+
+        }
     }
 }
