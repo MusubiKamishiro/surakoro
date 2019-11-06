@@ -9,25 +9,23 @@ public class PlayerCollider : MonoBehaviour
 		Red = 0,
 		Brue,
 		Green,
+		Yellow,
 		max
 	};
 
-	public int totalEatNum = 0;			// 敵を食べた総数
-	public EnemyColor oldEnemyColor = EnemyColor.max;    // 最後に食べた敵の色
-	public int score = 0;				// スコア
-	public int combo = 0;				// コンボ, 同じ色が連続で消えた場合
+	private EnemyColor oldEnemyColor = EnemyColor.max;    // 最後に食べた敵の色
+	private int totalEatNum = 0;			// 敵を食べた総数
+	private int combo = 0;				// コンボ, 同じ色が連続で消えた場合
 	public const int addScore = 100;	// 加算スコア
-	private bool wall1BreakFlag = false;
-	private Vector3 scale = new Vector3(20, 20, 0);     // 敵を食べて大きくなるサイズ;
+	private List<bool> wallBreakFlag = new List<bool>();
+	private int wallNum = 5;
+
+	Score score = new Score();
 
 	// 各種ゲッター
 	public int GetTotalEatNum()
 	{
 		return totalEatNum;
-	}
-	public int GetScore()
-	{
-		return score;
 	}
 	public int GetCombo()
 	{
@@ -46,15 +44,18 @@ public class PlayerCollider : MonoBehaviour
 	// 当たってる間
 	private void OnCollisionStay(Collision collision)
 	{
-		if (collision.gameObject.CompareTag("wall1"))
+		for (int i = 0; i < wallNum; ++i)
 		{
-			if (wall1BreakFlag)
+			if (wallBreakFlag[i])
 			{
-				//Destroy(collision.gameObject);
-				collision.rigidbody.isKinematic = false;
-				//Vector3 mLocalScale = collision.gameObject.transform.localScale;
-				//Vector3 mPos = new Vector3(Random.Range(0, mLocalScale.x), Random.Range(0, mLocalScale.y), Random.Range(0, mLocalScale.z));
-				collision.rigidbody.AddForceAtPosition(new Vector3(0, 0, Random.Range(-100, -1000)), new Vector3(0, 0, 0));
+				string mWallName = "Wall" + (i + 1).ToString();
+
+				if (collision.gameObject.CompareTag(mWallName))
+				{
+				
+					collision.rigidbody.isKinematic = false;
+					collision.rigidbody.AddForceAtPosition(new Vector3(0, 0, Random.Range(-100, -1000)), new Vector3(0, 0, 0));
+				}
 			}
 		}
 	}
@@ -70,36 +71,40 @@ public class PlayerCollider : MonoBehaviour
 				if (oldEnemyColor == mEnemyColor)
 				{
 					++combo;
-					score += addScore * combo;
+					score.Add(addScore * combo);
 				}
 				else
 				{
 					oldEnemyColor = mEnemyColor;
-					score += addScore;
 					combo = 1;
+					score.Add(addScore);
 				}
 				++totalEatNum;
 				Destroy(collision.gameObject);
 				Debug.Log(mEnemyColor.ToString() + "と接触");
 			}
 		}
-
-		Debug.Log("得点：" + score);
 		Debug.Log(combo + "コンボ");
 		Debug.Log("敵を食べた数：" + totalEatNum);
 	}
 
 	void Start()
 	{
-
+		for (int i = 0; i < wallNum; ++i)
+		{
+			wallBreakFlag.Add(false);
+		}
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (transform.localScale.x >= scale.x)
+		for(int i = 0; i < wallNum; ++i)
 		{
-			wall1BreakFlag = true;
+			if (transform.localScale.x >= (Player.FindObjectOfType<Player>().GetGrowingSize().x * (i + 1)))
+			{
+				wallBreakFlag[i] = true;
+			}
 		}
 	}
 }
