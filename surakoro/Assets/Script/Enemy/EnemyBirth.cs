@@ -18,7 +18,8 @@ public class EnemyBirth : MonoBehaviour
 
     [SerializeField]
     int allEnemyMax;    // 全体で敵が出てくる数の上限
-
+  
+ 
     // Use this for initialization
     void Start()
     {
@@ -45,6 +46,23 @@ public class EnemyBirth : MonoBehaviour
             Instantiate(enemy, this.transform.position, Quaternion.identity);
             count = 0;
         }
+       
+    }
+    public float GetCountMax()
+    {
+        return countMax;
+    }
+    public int GetEnemyMax()
+    {
+        return allEnemyMax;
     }
 
+    public void SetCountMax(float idx)
+    {
+        countMax = idx;
+    }
+    public void SetEnemyMax(int idx)
+    {
+        allEnemyMax = idx;
+    }
 }
