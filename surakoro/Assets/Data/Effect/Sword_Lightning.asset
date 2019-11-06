@@ -17,39 +17,39 @@ MonoBehaviour:
   - path: Texture/Burst_1.png
     texture: {fileID: 2800000, guid: 4139c1ef4f442734080a1bf5e7063a85, type: 3}
   - path: Texture/Burst_2.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 84372ad8aa181b041aaf343c68ba5de6, type: 3}
   - path: Texture/Fire.png
     texture: {fileID: 2800000, guid: 3bf4afbacb7dcdf4db3ab5218e154400, type: 3}
   - path: Texture/Fire_Blur.png
     texture: {fileID: 2800000, guid: 3c858dd41a66ef54ea1f545e8182abdd, type: 3}
   - path: Texture/Fire_Single.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: b887cd49cd8c5194d9bf3ee4c8d87cbb, type: 3}
   - path: Texture/Glass.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 92ce1397d3b553046a7ecf53cce3f55f, type: 3}
   - path: Texture/Halo.png
     texture: {fileID: 2800000, guid: 01f550a441a0604429c3db6fb7c57328, type: 3}
   - path: Texture/Line3.png
     texture: {fileID: 2800000, guid: 4ce80ac246c80b640b6d2a4d81b31305, type: 3}
   - path: Texture/Particle_Hard.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: b4cdccf2e35c5dd45b79f19cd2bfa458, type: 3}
   - path: Texture/Particle_Soft.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 940d6b5cf3f45d84f98a297450d30fb1, type: 3}
   - path: Texture/Shockwave.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 6d799d66168bc3b42b4237d33897fe64, type: 3}
   - path: Texture/Smoke.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: cc009d4092dfe5f448c578f598af31be, type: 3}
   - path: Texture/Smoke_Lighting.png
     texture: {fileID: 2800000, guid: 43a86d85963455a4e9c4b8727875e973, type: 3}
   - path: Texture/Splash.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 640540b9ad4f22945819495b83283353, type: 3}
   - path: Texture/Star.png
     texture: {fileID: 2800000, guid: 327313e9cb19a294e84b957d32c02200, type: 3}
   - path: Texture/Thunder_Thin.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: e5725cf49116d674099ebf314e2e13b4, type: 3}
   - path: Texture/ExperimentalBlur.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: a59417d618ba306448db60405d54d5a7, type: 3}
   - path: Texture/Wind.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: f7409e69a682cf44babece6b67b23613, type: 3}
   soundResources: []
   modelResources:
   - path: Model/LongSword_Blade.asset
