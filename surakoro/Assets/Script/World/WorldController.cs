@@ -23,6 +23,8 @@ public class WorldController : MonoBehaviour
     {
         float triggerVal = Input.GetAxis("L_R_Trigger");
 
+        
+
         // トリガーの入力が何もない状態ならIdle
         if (triggerVal == 0.0f)
         {

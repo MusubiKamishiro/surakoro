@@ -17,11 +17,11 @@ MonoBehaviour:
   - path: Texture/LaserMain02.png
     texture: {fileID: 2800000, guid: 291224ff2dc4793499aa94051554f6e0, type: 3}
   - path: Texture/Particle04_clear_hard.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: e00f8b93ebbc1d14aaaaaa177f535bf1, type: 3}
   - path: Texture/Particle04_clear_soft.png
     texture: {fileID: 2800000, guid: 8b7c2ab23ad728340853a83a488ef255, type: 3}
   - path: Texture/Cloud01.png
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: aeb777db3be79d74a9b41c73120c9753, type: 3}
   soundResources: []
   modelResources: []
   Scale: 1
