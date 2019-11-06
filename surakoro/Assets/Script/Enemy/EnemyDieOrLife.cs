@@ -50,8 +50,11 @@ public class EnemyDieOrLife : MonoBehaviour
             {
                 Destroy(effect);
                 stomachInFlag = true;
+                this.tag = this.tag + "Score";
                 this.GetComponent<Rigidbody>().useGravity = true;
-                this.transform.position = stomachFloor.transform.position + new Vector3(0.0f, 50.0f, 0.0f);
+                this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                this.transform.localScale = this.transform.localScale * 0.5f;
+                this.transform.position = stomachFloor.transform.position + new Vector3(0.0f, 15.0f, 0.0f);
             }
         }
     }
