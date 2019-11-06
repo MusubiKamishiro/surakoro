@@ -17,19 +17,19 @@ MonoBehaviour:
   - path: Texture/Fire_Blur.png
     texture: {fileID: 2800000, guid: 3c858dd41a66ef54ea1f545e8182abdd, type: 3}
   - path: Texture/Fire_Single.png
-    texture: {fileID: 2800000, guid: b887cd49cd8c5194d9bf3ee4c8d87cbb, type: 3}
+    texture: {fileID: 0}
   - path: Texture/Line3.png
     texture: {fileID: 2800000, guid: 4ce80ac246c80b640b6d2a4d81b31305, type: 3}
   - path: Texture/Particle_Hard.png
-    texture: {fileID: 2800000, guid: b4cdccf2e35c5dd45b79f19cd2bfa458, type: 3}
+    texture: {fileID: 0}
   - path: Texture/Particle_Soft.png
-    texture: {fileID: 2800000, guid: 940d6b5cf3f45d84f98a297450d30fb1, type: 3}
+    texture: {fileID: 0}
   - path: Texture/Smoke.png
-    texture: {fileID: 2800000, guid: cc009d4092dfe5f448c578f598af31be, type: 3}
+    texture: {fileID: 0}
   - path: Texture/Splash.png
-    texture: {fileID: 2800000, guid: 640540b9ad4f22945819495b83283353, type: 3}
+    texture: {fileID: 0}
   - path: Texture/ExperimentalBlur.png
-    texture: {fileID: 2800000, guid: a59417d618ba306448db60405d54d5a7, type: 3}
+    texture: {fileID: 0}
   - path: Texture/ExperimentalNoise.png
     texture: {fileID: 2800000, guid: 24b3f6886461cdc41bf87efae9858d1d, type: 3}
   soundResources: []

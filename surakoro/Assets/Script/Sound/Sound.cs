@@ -9,8 +9,8 @@ using UnityEngine;
 public class Sound : MonoBehaviour
 {
 
-    [SerializeField]
-    AudioClip sound1;           // SEの音源
+    //[SerializeField]
+    //AudioClip soundEffect;           // SEの音源
 
     AudioSource audioSource;    // SEを鳴らす用
 
@@ -23,10 +23,17 @@ public class Sound : MonoBehaviour
     void Update()
     {
         // スペース
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //SEを鳴らす
-            audioSource.PlayOneShot(sound1);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    //SEを鳴らす
+        //    audioSource.PlayOneShot(sound1);
+        //}
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+         Destroy(col.gameObject);
+         audioSource.PlayOneShot(audioSource.clip);
+        
     }
 }
