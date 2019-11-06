@@ -138,4 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectPrefab: {fileID: 6041984170882861350, guid: e57073e7555a99d4e99f55164c2616de,
     type: 3}
-  stomachFloor: {fileID: 0}
+  stomachFloor: {fileID: 7674231464551241639, guid: 888d2cc9c05e1394f87332cd251447ef,
+    type: 3}
