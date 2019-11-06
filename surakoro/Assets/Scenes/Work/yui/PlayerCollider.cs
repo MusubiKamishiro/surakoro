@@ -48,15 +48,15 @@ public class PlayerCollider : MonoBehaviour
 		{
 			if (wallBreakFlag[i])
 			{
-				string mWallName = "Wall" + (i + 1).ToString();
+                string mWallName = "Wall" + (i + 1).ToString();
 
-				if (collision.gameObject.CompareTag(mWallName))
-				{
-				
-					collision.rigidbody.isKinematic = false;
-					collision.rigidbody.AddForceAtPosition(new Vector3(0, 0, Random.Range(-100, -1000)), new Vector3(0, 0, 0));
-				}
-			}
+                if (collision.gameObject.CompareTag(mWallName))
+                {
+                    GetComponent<AudioSource>().PlayOneShot(GetComponent<Sound>().GetSE(1));
+                    collision.rigidbody.isKinematic = false;
+                    collision.rigidbody.AddForceAtPosition(new Vector3(0, 0, Random.Range(-100, -1000)), new Vector3(0, 0, 0));
+                }
+            }
 		}
 	}
 

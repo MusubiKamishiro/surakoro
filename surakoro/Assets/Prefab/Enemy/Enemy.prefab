@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5757778954144451303}
   - component: {fileID: 6772093412607248877}
   - component: {fileID: 6253780509289585457}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Brue
   m_Icon: {fileID: 0}

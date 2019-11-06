@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private Sound sound;
     private float speed = 1.5f;     // デバッグ用のプレイヤー移動速度
     private Vector3 growingSize = new Vector3(20, 20, 0);	// 敵を食べて大きくなるサイズ
 	private List<bool> giantFlag = new List<bool>();
 	private List<int> wallBreakCounts = new List<int>();
 	private int count = 0;
+   
 
 	public int firstWallBreakCount = 5;
 	public int second = 8;
@@ -23,6 +26,7 @@ public class Player : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+        
 		for (int i = 0; i < 5; ++i)
 		{
 			giantFlag.Add(true);
@@ -48,9 +52,11 @@ public class Player : MonoBehaviour
 		{
 			if (pc.GetTotalEatNum() > wallBreakCounts[i])
 			{
-				if (giantFlag[i])
+
+                if (giantFlag[i])
 				{
-					Giant(i);
+
+                    Giant(i);
 				}
 			}
 		}
@@ -58,9 +64,11 @@ public class Player : MonoBehaviour
 
     void Giant(int ccount)
     {
+        sound.PlayWithoutOverlap(0);
         transform.localScale += growingSize / 60;
         if (count > 60)
         {
+
             giantFlag[ccount] = false;
             count = 0;
 		}
