@@ -8098,6 +8098,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6006965879327856992}
     m_Modifications:
+    - target: {fileID: 5085983029712670299, guid: 1af8f50eb5d68ef4cad0a059bd409812,
+        type: 3}
+      propertyPath: m_Name
+      value: roc_box2
+      objectReference: {fileID: 0}
     - target: {fileID: 8128525939780271176, guid: 1af8f50eb5d68ef4cad0a059bd409812,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8152,11 +8157,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5085983029712670299, guid: 1af8f50eb5d68ef4cad0a059bd409812,
-        type: 3}
-      propertyPath: m_Name
-      value: roc_box2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af8f50eb5d68ef4cad0a059bd409812, type: 3}
@@ -8236,6 +8236,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6006965879327856992}
     m_Modifications:
+    - target: {fileID: 5085983029712670299, guid: 1af8f50eb5d68ef4cad0a059bd409812,
+        type: 3}
+      propertyPath: m_Name
+      value: roc_box2 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8128525939780271176, guid: 1af8f50eb5d68ef4cad0a059bd409812,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8290,11 +8295,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 5085983029712670299, guid: 1af8f50eb5d68ef4cad0a059bd409812,
-        type: 3}
-      propertyPath: m_Name
-      value: roc_box2 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af8f50eb5d68ef4cad0a059bd409812, type: 3}
@@ -8374,6 +8374,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2448991632296070804}
     m_Modifications:
+    - target: {fileID: 5085983029712670299, guid: 1af8f50eb5d68ef4cad0a059bd409812,
+        type: 3}
+      propertyPath: m_Name
+      value: roc_box2
+      objectReference: {fileID: 0}
     - target: {fileID: 8128525939780271176, guid: 1af8f50eb5d68ef4cad0a059bd409812,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8428,11 +8433,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5085983029712670299, guid: 1af8f50eb5d68ef4cad0a059bd409812,
-        type: 3}
-      propertyPath: m_Name
-      value: roc_box2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af8f50eb5d68ef4cad0a059bd409812, type: 3}
@@ -9631,6 +9631,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6006965879327856992}
     m_Modifications:
+    - target: {fileID: 5085983029712670299, guid: 1af8f50eb5d68ef4cad0a059bd409812,
+        type: 3}
+      propertyPath: m_Name
+      value: roc_box2 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8128525939780271176, guid: 1af8f50eb5d68ef4cad0a059bd409812,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9685,11 +9690,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5085983029712670299, guid: 1af8f50eb5d68ef4cad0a059bd409812,
-        type: 3}
-      propertyPath: m_Name
-      value: roc_box2 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af8f50eb5d68ef4cad0a059bd409812, type: 3}
