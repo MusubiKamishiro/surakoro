@@ -19,20 +19,25 @@ public class ScoreManager : MonoBehaviour
     // スコアのアニメーションに使う倍率
     private float mMagnif;
 
+    int score;
 
-    Score mScore;
+    Result result;
 
     // Start is called before the first frame update
     void Start()
     {
         //// スコアを保存しているオブジェクトを検索
-        //GameObject scoreObj = GameObject.Find("");
+        GameObject scoreObj = GameObject.Find("ResultHall");
+
+        result = scoreObj.GetComponent<Result>();
 
         //// スコアオブジェクトからスコアを取得
         //score = scoreObj.GetScore();
 
-        // スコアを表示するオブジェクトの取得
-        //displayObj = GameObject.Find("");
+       // スコアを表示するオブジェクトの取得
+       displayObj = GameObject.Find("Score");
+
+        score = result.totalEatCount;
 
         mMagnif = 0.0f;
     }
@@ -43,8 +48,12 @@ public class ScoreManager : MonoBehaviour
         // スコアのtextオブジェクトからTextコンポーネントを取得
         Text scoreText = displayObj.GetComponent<Text>();
 
-        scoreText.text = "Score:" + Score.score;
+        if(result.flag && mMagnif <= 1.0f)
+        {
+            scoreText.text = "Total " + (int)(score * mMagnif);
+        }
 
-        
+
+        mMagnif += Time.deltaTime;
     }
 }
