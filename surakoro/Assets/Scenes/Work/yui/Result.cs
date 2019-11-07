@@ -10,7 +10,7 @@ public class Result : MonoBehaviour
 	public GameObject enemyGreen;
 	private int redCount;
 	private int greenCount;
-	private int totalEatCount;  // 食べた合計スライム数
+	public int totalEatCount;  // 食べた合計スライム数
 
 	public bool flag = true;
 

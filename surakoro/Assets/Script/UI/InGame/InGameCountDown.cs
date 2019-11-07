@@ -24,9 +24,8 @@ public class InGameCountDown : MonoBehaviour
 
     bool enable = false;
 
-
-    // エネミーのスポーン地点
-    public GameObject spawnpoint;
+    // TimeManager
+    public GameObject timeManager;
 
 
     // Start is called before the first frame update
@@ -41,8 +40,8 @@ public class InGameCountDown : MonoBehaviour
         fadeManager = GameObject.Find("FadeManager");
         fade = fadeManager.GetComponent<FadeScript>();
 
-        spawnpoint = GameObject.Find("Wall1_Outer 1/EnemySpawn");
-        spawnpoint.SetActive(false);
+        timeManager = GameObject.Find("TimeManager");
+        timeManager.SetActive(false);
 
         enable = false;
     }
@@ -60,8 +59,8 @@ public class InGameCountDown : MonoBehaviour
                 countDownObj.SetActive(true);
                 countDownAnim.SetTrigger("start");
 
-                // スポーン開始
-                spawnpoint.SetActive(true);
+                // timeManagerをアクティブ
+                timeManager.SetActive(true);
 
                 enable = true;
             }
