@@ -63,4 +63,9 @@ public class EnemyDieOrLife : MonoBehaviour
             }
         }
     }
+
+    public bool GetDieFlag()
+    {
+        return dieFlag;
+    }
 }

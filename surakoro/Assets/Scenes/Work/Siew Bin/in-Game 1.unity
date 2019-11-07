@@ -3667,6 +3667,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall2_Outer
       objectReference: {fileID: 0}
+    - target: {fileID: 6823527692444940146, guid: 5c7a257979806b945b738719ba0c67ba,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemySpawn2
+      objectReference: {fileID: 0}
     - target: {fileID: 6877511086291663057, guid: 5c7a257979806b945b738719ba0c67ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4251,6 +4256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall3_Outer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640976055732927110, guid: 1301579af075e02488e8816cc8faab44,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemySpawn3
       objectReference: {fileID: 0}
     - target: {fileID: 414713901288705904, guid: 1301579af075e02488e8816cc8faab44,
         type: 3}
@@ -5761,6 +5771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393495366935597517, guid: 55a68142136906845a0a882e295ec253,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemySpawn1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55a68142136906845a0a882e295ec253, type: 3}
@@ -9097,6 +9112,11 @@ PrefabInstance:
       propertyPath: countMax
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7473530302407680656, guid: ee169587d0d4cd9459f743723e365501,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemySpawn4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee169587d0d4cd9459f743723e365501, type: 3}
 --- !u!1001 &1931202352
@@ -10516,6 +10536,41 @@ PrefabInstance:
       propertyPath: cameraMng
       value: 
       objectReference: {fileID: 892697727}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.data[0]
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.data[1]
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.data[2]
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.data[3]
+      value: -400
+      objectReference: {fileID: 0}
+    - target: {fileID: 700323064714818929, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: extraEffect.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 700323064714818929, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: extraEffect.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ec01604f0430e874ebe107012ab4d6a4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 961bbb57b8f91a74ea7a85adda0f01a5, type: 3}
 --- !u!1001 &735184399561757259
@@ -12030,6 +12085,11 @@ PrefabInstance:
       propertyPath: mCamera
       value: 
       objectReference: {fileID: 2133614284}
+    - target: {fileID: 1551307096818226241, guid: a5f8e8d89b013494d92311906efadacd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f8e8d89b013494d92311906efadacd, type: 3}
 --- !u!1001 &3062943299507913379
