@@ -7,7 +7,7 @@ public class PlayerCollider : MonoBehaviour
 	public enum EnemyColor
 	{
 		Red = 0,
-		Blue,
+		Brue,
 		Green,
 		Yellow,
 		max
@@ -115,7 +115,7 @@ public class PlayerCollider : MonoBehaviour
 			if(!mP.GetGiantFlag(i))
 			{
 				wallBreakFlag[i] = true;
-               // cameraMng.ZoomOut(i);
+               cameraMng.ZoomOut(i);
 			}
 		}
 	}

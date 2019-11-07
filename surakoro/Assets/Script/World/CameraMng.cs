@@ -7,7 +7,7 @@ public class CameraMng : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private Camera mCamera;
+    Camera mCamera;
     private float[] zoomOutSize;
     private int currentZoomSize =0;
     private const int wallBreakNum = 3; //壊れる壁の数

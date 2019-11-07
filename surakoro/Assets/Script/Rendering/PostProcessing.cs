@@ -7,12 +7,12 @@ public class PostProcessing : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] mPostVolume;
-    private int profileNow;
+    private int profileNow = 0;
     [SerializeField]
     private Light mLight;
     DateTime mTimeOld;
     [SerializeField]
-    private Player player;
+    Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -43,14 +43,17 @@ public class PostProcessing : MonoBehaviour
     //ポストプロセスのプロファイルを変える
     public void ChangeWeather(int idx)
     {
-        if (mPostVolume[idx].activeSelf) return;
-        for (int i =0; i< (int)mPostVolume.Length;i++)
+        //if (mPostVolume[idx].activeSelf) return;
+        if (profileNow <= idx)
         {
-            mPostVolume[i].SetActive(false);
+            for (int i = 0; i < (int)mPostVolume.Length; i++)
+            {
+                mPostVolume[i].SetActive(false);
+            }
+            mPostVolume[idx].SetActive(true);
+            mLight.shadows = mPostVolume[idx].name == "Night" ? LightShadows.None : LightShadows.Soft;
+            profileNow = idx;
         }
-        mPostVolume[idx].SetActive(true);
-        mLight.shadows = mPostVolume[idx].name == "Night" ? LightShadows.None : LightShadows.Soft;
-        profileNow = idx;
     }
     
 }

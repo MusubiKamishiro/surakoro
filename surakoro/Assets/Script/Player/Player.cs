@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 	void Start()
     {
 		PlayerCollider pc = FindObjectOfType<PlayerCollider>();
-        for (int i = 0; i < pc.GetWallNum(); ++i)
+        for (int i = 0; i <5; ++i)
 		{
 			giantFlag.Add(true);
             if(i == 0)
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
 				if (giantFlag[i])
 				{
 					Giant(i);
-                    wallBreakEffect.transform.position = this.transform.position;
+                    //wallBreakEffect.transform.position = this.transform.position;
                 }
 			}
 		}
