@@ -49,11 +49,12 @@ public class PlayerCollider : MonoBehaviour
 	// 当たってる間
 	private void OnCollisionStay(Collision collision)
 	{
-		for (int i = 0; i < wallNum; ++i)
-		{
-			if (wallBreakFlag[i])
-			{
-                string mWallName = "Wall" + (i + 1).ToString();
+        for (int i = 0; i < wallNum; ++i)
+        {
+            string mWallName = "Wall" + (i + 1).ToString();
+
+            if (wallBreakFlag[i])
+            {
 
                 if (collision.gameObject.CompareTag(mWallName))
                 {
@@ -62,7 +63,7 @@ public class PlayerCollider : MonoBehaviour
                     collision.rigidbody.AddForceAtPosition(new Vector3(0, 0, Random.Range(-100, -1000)), new Vector3(0, 0, 0));
                 }
             }
-		}
+        }
 	}
 
 	
@@ -87,7 +88,9 @@ public class PlayerCollider : MonoBehaviour
 					score.Add(addScore);
 				}
 				++totalEatNum;
-				Debug.Log(mEnemyColor.ToString() + "と接触");
+                GetComponent<AudioSource>().PlayOneShot(GetComponent<Sound>().GetSE(2));
+
+                Debug.Log(mEnemyColor.ToString() + "と接触");
 				// Destroy(collision.gameObject);
 			}
 		}

@@ -10561,6 +10561,16 @@ PrefabInstance:
       propertyPath: gravity.Array.data[3]
       value: -400
       objectReference: {fileID: 0}
+    - target: {fileID: 700323064714818929, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: extraEffect.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 700323064714818929, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: extraEffect.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ec01604f0430e874ebe107012ab4d6a4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 961bbb57b8f91a74ea7a85adda0f01a5, type: 3}
 --- !u!1001 &735184399561757259
