@@ -1,6 +1,11 @@
-﻿using System.Collections;
+﻿//-------------------------------------------------------------------//
+// ゲーム中のボタンアニメーション
+//                                            Yutaro Ono.
+//------------------------------------------------------------------//
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameButtonAnimation : MonoBehaviour
 {
@@ -9,6 +14,7 @@ public class InGameButtonAnimation : MonoBehaviour
     private Animator mAnim;
 
     public float triggerVal;
+
 
     // Start is called before the first frame update
     void Start()
