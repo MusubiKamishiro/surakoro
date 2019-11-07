@@ -128,7 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallBreakEffect: {fileID: 0}
   gravity: []
-  growingSize: {x: 20, y: 20, z: 0}
+  sound: {fileID: 0}
+  growingSize: {x: 150, y: 150, z: 150}
 --- !u!114 &5619385899569081940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,3 +255,4 @@ MonoBehaviour:
   extraEffect:
   - {fileID: 8300000, guid: 09da5467ea6944142b1e4720fee5e008, type: 3}
   - {fileID: 8300000, guid: d6c7724cd342b964c8f116dd9841f1dd, type: 3}
+  - {fileID: 8300000, guid: ec01604f0430e874ebe107012ab4d6a4, type: 3}

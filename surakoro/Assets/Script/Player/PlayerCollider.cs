@@ -88,7 +88,8 @@ public class PlayerCollider : MonoBehaviour
 					score.Add(addScore);
 				}
 				++totalEatNum;
-				Debug.Log(mEnemyColor.ToString() + "と接触");
+                GetComponent<AudioSource>().PlayOneShot(GetComponent<Sound>().GetSE(2));
+                Debug.Log(mEnemyColor.ToString() + "と接触");
 				// Destroy(collision.gameObject);
 			}
 		}
@@ -114,7 +115,7 @@ public class PlayerCollider : MonoBehaviour
 			if(!mP.GetGiantFlag(i))
 			{
 				wallBreakFlag[i] = true;
-                cameraMng.ZoomOut(i);
+               // cameraMng.ZoomOut(i);
 			}
 		}
 	}

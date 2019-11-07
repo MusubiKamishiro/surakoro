@@ -79,10 +79,10 @@ public class EnemyBirthMng : MonoBehaviour
                 revertValueFlag[i] = true;
 
             }
-            if (!player.GetGiantFlag(i))
-            {
-                enemyBirthGroup[i].SetActive(false);
-            }
+            //if (!player.GetGiantFlag(i))
+            //{
+            //    enemyBirthGroup[i].SetActive(false);
+            //}
 
         }
     }
