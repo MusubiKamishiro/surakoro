@@ -59,6 +59,11 @@ public class Sound : MonoBehaviour
         }
     }
 
+    public void PlayWithOverlap(int idx)
+    {
+        audioSource.PlayOneShot(extraEffect[idx]);
+    }
+
     public AudioClip GetSE(int idx)
     {
         return extraEffect[idx];

@@ -11,29 +11,39 @@ public class PostProcessing : MonoBehaviour
     [SerializeField]
     private Light mLight;
     DateTime mTimeOld;
+    [SerializeField]
+    private Player player;
 
     // Start is called before the first frame update
     void Start()
     {
         int rand = UnityEngine.Random.Range(0, mPostVolume.Length);
-        ChangeWeather(rand);
+        ChangeWeather(0);
         mTimeOld = DateTime.Now;
     }
 
     // Update is called once per frame
     void Update()
     {
-        var timeNow = DateTime.Now;
-        if (timeNow - mTimeOld >= TimeSpan.FromSeconds(10))
+        for (int i = 0; i < mPostVolume.Length; i++)
         {
-            mTimeOld = DateTime.Now;
-            ChangeWeather((profileNow + 1) % mPostVolume.Length);
+            if (!player.GetGiantFlag(i))
+            {
+                ChangeWeather(i + 1 % mPostVolume.Length);
+            }
         }
+        //var timeNow = DateTime.Now;
+        //if (timeNow - mTimeOld >= TimeSpan.FromSeconds(10))
+        //{
+        //    mTimeOld = DateTime.Now;
+        //    ChangeWeather((profileNow + 1) % mPostVolume.Length);
+        //}
     }
 
     //ポストプロセスのプロファイルを変える
     public void ChangeWeather(int idx)
     {
+        if (mPostVolume[idx].activeSelf) return;
         for (int i =0; i< (int)mPostVolume.Length;i++)
         {
             mPostVolume[i].SetActive(false);

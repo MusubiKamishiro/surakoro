@@ -13,6 +13,7 @@ public class EnemyBirthMng : MonoBehaviour
     [SerializeField]
     private int[] lowerEnemyMax;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class EnemyBirthMng : MonoBehaviour
         revertValueFlag[0] = false;
 
         //enemyBirthGroup = new GameObject[wallNum];
+        //第一ステージはそのまま
         for (int j = 1; j < enemyBirthGroup.Length; j++)
         {
             revertValueFlag[j] = false;
@@ -28,12 +30,14 @@ public class EnemyBirthMng : MonoBehaviour
             {
                 enemyBirthGroup[j].transform.GetChild(i).gameObject.GetComponent<EnemyBirth>().SetCountMax(enemyBirthGroup[j].transform.GetChild(i).gameObject.GetComponent<EnemyBirth>().GetCountMax() * slowSpawnRate[j]);
                 enemyBirthGroup[j].transform.GetChild(i).gameObject.GetComponent<EnemyBirth>().SetEnemyMax(enemyBirthGroup[j].transform.GetChild(i).gameObject.GetComponent<EnemyBirth>().GetEnemyMax() / lowerEnemyMax[j]);
-               
+                if (j + 1 < enemyBirthGroup.Length)
+                {
+                    //今と次のステージをtrueにするだけ
+                    //例：1,2-> 2,3 -> 3,4
+                    enemyBirthGroup[j + 1].transform.GetChild(i).gameObject.GetComponent<EnemyBirth>().SetSpawnFlag(false);
+                }
             }
-            if (j + 1 < enemyBirthGroup.Length)
-            {
-                enemyBirthGroup[j + 1].SetActive(false);
-            }
+            
         }
     }
 
@@ -45,6 +49,7 @@ public class EnemyBirthMng : MonoBehaviour
 
     void StageInit()
     {
+        //第一ステージはそのまま
         for (int i = 1; i < enemyBirthGroup.Length; ++i)
         {
             if (!player.GetGiantFlag(i - 1) && !revertValueFlag[i])
@@ -56,6 +61,7 @@ public class EnemyBirthMng : MonoBehaviour
                 }
                 if (i + 1 < enemyBirthGroup.Length)
                 {
+                
                     enemyBirthGroup[i + 1].SetActive(true);
                 }
                 enemyBirthGroup[i - 1].SetActive(false);
