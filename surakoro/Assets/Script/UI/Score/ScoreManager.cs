@@ -10,7 +10,8 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     // スコアに表示する値(scoreObjから取得)
-    public float score;
+    //[SerializeField]
+   private Score score;
 
     // スコアを表示するTextオブジェクト
     [SerializeField]
@@ -32,8 +33,9 @@ public class ScoreManager : MonoBehaviour
         //score = scoreObj.GetScore();
 
         // スコアを表示するオブジェクトの取得
-        displayObj = GameObject.Find("");
+        //displayObj = GameObject.Find("");
 
+        score = FindObjectOfType<Score>();
         mMagnif = 0.0f;
     }
 
@@ -43,7 +45,7 @@ public class ScoreManager : MonoBehaviour
         // スコアのtextオブジェクトからTextコンポーネントを取得
         Text scoreText = displayObj.GetComponent<Text>();
 
-        scoreText.text = "" + score;
+        scoreText.text = "Score:" + score.GetScore();
 
         
     }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6041984170882861350
+--- !u!1 &857035707585887409
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6041984170882861348}
-  - component: {fileID: 6041984170882861351}
+  - component: {fileID: 6418636390168459814}
+  - component: {fileID: 4017426030492626701}
   m_Layer: 0
-  m_Name: StomachGo
+  m_Name: PostProcessMng
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6041984170882861348
+--- !u!4 &6418636390168459814
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6041984170882861350}
+  m_GameObject: {fileID: 857035707585887409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.448178, y: -4.369001, z: 0.4675436}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6041984170882861351
+--- !u!114 &4017426030492626701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6041984170882861350}
+  m_GameObject: {fileID: 857035707585887409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35d396bcb8480c24eb784eebe6096a99, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ba64d88d1495024292f4318a10bcedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectAsset: {fileID: 11400000, guid: 0b89fceed33e52f4c8fe036fbc50c061, type: 2}
-  playOnStart: 1
-  isLooping: 1
+  mPostVolume:
+  - {fileID: 1079733236317368118, guid: 1a1658319ff40c845ab99a55ee2de68e, type: 3}
+  - {fileID: 5370167984558443581, guid: f14d6148c76c2ba4abfc68d5f779044d, type: 3}
+  - {fileID: 4751498011106815690, guid: feb7e0b0c73e34545b013aa916f2cf9d, type: 3}
+  - {fileID: 7643745155904832602, guid: f6f9aa31d35fcad4697df10d5b1666d6, type: 3}
+  mLight: {fileID: 0}
+  player: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5, type: 3}

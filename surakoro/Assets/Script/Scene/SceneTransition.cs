@@ -9,6 +9,9 @@ public class SceneTransition : MonoBehaviour
     InputManager mInput;
 
     FadeScript mFade;
+    [SerializeField]
+    AudioSource audioSource;
+
 
     // 次シーン切り替えのフラグ
     public bool nextScene;
@@ -36,6 +39,7 @@ public class SceneTransition : MonoBehaviour
         if(mInput.GetEnter() == true)
         {
             nextScene = true;
+            audioSource.PlayOneShot(audioSource.clip);
         }
 
         // 次シーンへの遷移フラグが立ったら
@@ -44,7 +48,7 @@ public class SceneTransition : MonoBehaviour
 
             if (mFade.FadeIn(1.0f))
             {
-                SceneManager.LoadScene("in-Game");
+                SceneMng.Instance.MoveScene();
             }
         }
     }

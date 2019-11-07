@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     List<float> gravity = new List<float>();
-
+    [SerializeField]
+    private Sound sound;
 
 
     private float speed = 1.5f;     // デバッグ用のプレイヤー移動速度
@@ -91,6 +92,7 @@ public class Player : MonoBehaviour
 	// プレイヤーの巨大化
     void Giant(int count)
     {
+        sound.PlayWithoutOverlap(0);
         transform.localScale += growingSize / 60;
         if (secondCount > 1)
         {

@@ -42,7 +42,7 @@ public class FadeScript : MonoBehaviour
         alfa += Time.deltaTime / in_Time;
 
         // カラーを更新
-        fadeImg.color = new Color(255, 255, 255, alfa);
+        fadeImg.color = new Color(fadeImg.color.r, fadeImg.color.g, fadeImg.color.b, alfa);
 
         if (alfa >= 1.0)
         {
@@ -58,9 +58,9 @@ public class FadeScript : MonoBehaviour
         alfa -= Time.deltaTime / in_Time;
 
         // カラーを更新
-        fadeImg.color = new Color(255, 255, 255, alfa);
+        fadeImg.color = new Color(fadeImg.color.r, fadeImg.color.g, fadeImg.color.b, alfa);
 
-        if(alfa <= 0.0f)
+        if (alfa <= 0.0f)
         {
             return true;
         }
