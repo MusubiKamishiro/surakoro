@@ -29,10 +29,16 @@ public class InputManager : MonoBehaviour
         return triggerVal;
     }
 
-    // 決定ボタンの取得
+    // 決定ボタンの取得(A)
     public bool GetEnter()
     {
         return Input.GetButtonDown("Fire1");
+    }
+
+    // キャンセルボタンの取得(B)
+    public bool GetCancel()
+    {
+        return Input.GetButtonDown("Fire2");
     }
 
 }

@@ -48,7 +48,7 @@ public class ScoreManager : MonoBehaviour
         // スコアのtextオブジェクトからTextコンポーネントを取得
         Text scoreText = displayObj.GetComponent<Text>();
 
-        if(mMagnif <= 1.0f)
+        if(result.flag && mMagnif <= 1.0f)
         {
             scoreText.text = "Total " + (int)(score * mMagnif);
         }

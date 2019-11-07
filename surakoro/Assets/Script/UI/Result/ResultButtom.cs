@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResultButtom : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class ResultButtom : MonoBehaviour
 
     // Resultスクリプト格納用
     Result result;
+
+    // InputManager
+    InputManager input;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +29,8 @@ public class ResultButtom : MonoBehaviour
         GameObject resultHall = GameObject.Find("ResultHall");
         result = resultHall.GetComponent<Result>();
 
-
+        GameObject inputObj = GameObject.Find("InputManager");
+        input = GetComponent<InputManager>();
     }
 
     // Update is called once per frame
@@ -41,6 +46,16 @@ public class ResultButtom : MonoBehaviour
         else if(result.flag == false)
         {
             buttomImg.SetActive(true);
+
+            if(input.GetEnter())
+            {
+                SceneManager.LoadScene("TitleScene 2");
+            }
+
+            if(input.GetCancel())
+            {
+                UnityEngine.Application.Quit();
+            }
         }
 
 
