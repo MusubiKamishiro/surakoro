@@ -45,6 +45,16 @@ public class EnemyBirthMng : MonoBehaviour
     void Update()
     {
         StageInit();
+        for (int i = 0; i < enemyBirthGroup.Length;i++)
+        {
+            for (int j = 0; j < enemyBirthGroup[i].transform.childCount; j++)
+            {
+                if (!enemyBirthGroup[i].activeSelf)
+                {
+                    enemyBirthGroup[i].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().DestroyPrefab();
+                } 
+            }
+        }
     }
 
     void StageInit()

@@ -19,7 +19,10 @@ public class EnemyBirth : MonoBehaviour
     [SerializeField]
     int allEnemyMax;    // 全体で敵が出てくる数の上限
     bool spawnFlag = true;
- 
+    
+
+    List<GameObject> enemyPrefab = new List<GameObject>();
+
     // Use this for initialization
     void Start()
     {
@@ -45,11 +48,12 @@ public class EnemyBirth : MonoBehaviour
             if (spawnFlag)
             {
                 // Cubeプレハブを元に、インスタンスを生成
-                Instantiate(enemy, this.transform.position, Quaternion.identity);
+                var e =Instantiate(enemy, this.transform.position, Quaternion.identity);
+                enemyPrefab.Add(e);
                 count = 0;
             }
+            
         }
-       
     }
     public float GetCountMax()
     {
@@ -72,5 +76,25 @@ public class EnemyBirth : MonoBehaviour
     public void SetSpawnFlag(bool flag)
     {
         spawnFlag = flag;
+    }
+
+    public void DestroyPrefab()
+    {
+        foreach( GameObject obj in enemyPrefab)
+        {
+
+            if (obj == null)
+            {
+                continue;
+            }
+            if (!obj.GetComponent<EnemyDieOrLife>().GetDieFlag()) continue;
+            obj.GetComponent<SphereCollider>().enabled = false;
+            var objPos = Camera.main.WorldToScreenPoint(obj.transform.position);
+            if (objPos.y > Screen.height)
+            {
+                Debug.Log("敵消す");
+                Destroy(obj);
+            }
+        }
     }
 }

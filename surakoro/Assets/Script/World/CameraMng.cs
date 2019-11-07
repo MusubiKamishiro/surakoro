@@ -14,7 +14,7 @@ public class CameraMng : MonoBehaviour
     void Start()
     {
         
-        zoomOutSize = new float[wallBreakNum] { 75,155,350 };
+        zoomOutSize = new float[wallBreakNum] { 80,170,350 };
         
     }
 

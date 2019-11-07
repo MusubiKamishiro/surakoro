@@ -11,7 +11,6 @@ public class ScoreManager : MonoBehaviour
 {
     // スコアに表示する値(scoreObjから取得)
     //[SerializeField]
-   private Score score;
 
     // スコアを表示するTextオブジェクト
     [SerializeField]
@@ -35,7 +34,6 @@ public class ScoreManager : MonoBehaviour
         // スコアを表示するオブジェクトの取得
         //displayObj = GameObject.Find("");
 
-        score = FindObjectOfType<Score>();
         mMagnif = 0.0f;
     }
 
@@ -45,7 +43,7 @@ public class ScoreManager : MonoBehaviour
         // スコアのtextオブジェクトからTextコンポーネントを取得
         Text scoreText = displayObj.GetComponent<Text>();
 
-        scoreText.text = "Score:" + score.GetScore();
+        scoreText.text = "Score:" + Score.score;
 
         
     }

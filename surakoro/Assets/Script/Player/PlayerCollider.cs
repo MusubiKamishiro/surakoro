@@ -21,8 +21,7 @@ public class PlayerCollider : MonoBehaviour
 	private int wallNum = 5;
     [SerializeField]
     CameraMng cameraMng;
-    [SerializeField]
-    private Score score;
+    Score score = new Score();
 
 	// 各種ゲッター
 	public int GetTotalEatNum()

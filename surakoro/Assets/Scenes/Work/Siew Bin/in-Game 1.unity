@@ -10516,6 +10516,31 @@ PrefabInstance:
       propertyPath: cameraMng
       value: 
       objectReference: {fileID: 892697727}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.data[0]
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.data[1]
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.data[2]
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5,
+        type: 3}
+      propertyPath: gravity.Array.data[3]
+      value: -400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 961bbb57b8f91a74ea7a85adda0f01a5, type: 3}
 --- !u!1001 &735184399561757259
@@ -12030,6 +12055,11 @@ PrefabInstance:
       propertyPath: mCamera
       value: 
       objectReference: {fileID: 2133614284}
+    - target: {fileID: 1551307096818226241, guid: a5f8e8d89b013494d92311906efadacd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f8e8d89b013494d92311906efadacd, type: 3}
 --- !u!1001 &3062943299507913379
