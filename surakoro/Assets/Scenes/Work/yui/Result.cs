@@ -46,7 +46,7 @@ public class Result : MonoBehaviour
 			// ボタンを押したらシーン切り替え
 			if (Input.GetKey("joystick button 0"))
 			{
-				SceneManager.LoadScene("testScene");
+				SceneManager.LoadScene("TitleScene 1");
 			}
 		}
 

@@ -7,13 +7,13 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: 
-    guid: 87c714fdcbd7c364d8e655199394bbef
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/in-Game.unity
-    guid: 6c30372896bd1d748a07504ddab62511
-  - enabled: 1
-    path: Assets/Scenes/ResultScene.unity
+    path: Assets/Scenes/Work/Siew Bin/ResultScene1.unity
     guid: d60f06cfc017a8143933c8ec183e5c13
+  - enabled: 1
+    path: Assets/Scenes/in-GameSample 1.unity
+    guid: dd2db194bf708c34f8cc21f95c24fbe5
   - enabled: 1
     path: Assets/Scenes/Work/yui/player.unity
     guid: 14f29153c4602094b9a713f40799f274
@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Work/yui/result.unity
     guid: 14f957331f071834a916ba766b3c31ce
+  - enabled: 1
+    path: Assets/Scenes/result 1.unity
+    guid: 61b4f2dfc95cff745bc684777d2162b1
+  - enabled: 1
+    path: Assets/Scenes/Work/yutaro/TitleScene 1.unity
+    guid: 86a07a71fb8e98a4cab8bae2f05ba6b0
   m_configObjects: {}

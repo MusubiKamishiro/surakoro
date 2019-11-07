@@ -48,7 +48,7 @@ public class SceneTransition : MonoBehaviour
 
             if (mFade.FadeIn(1.0f))
             {
-                SceneMng.Instance.MoveScene();
+                SceneManager.LoadScene("in-GameSample 1");
             }
         }
     }

@@ -10,6 +10,7 @@ public class GameTime : MonoBehaviour
 	public int gameSecond = 120;	// メインゲームを遊べる時間
 	private int finishSecond = 2;	// 終了の文字表示時間
 	private int stackSecond = 0;
+    private float time = 0;
 
 	public bool countFlag = true;
 	public bool startFlag = true;
@@ -21,6 +22,7 @@ public class GameTime : MonoBehaviour
     void Start()
     {
 		stackSecond = waitSecond;
+        time = 0.0f;
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class GameTime : MonoBehaviour
 		if (countFlag)
 		{
 			Debug.Log("スタートまで：" + (stackSecond - (int)Time.time));
-			if (Time.time > stackSecond)
+			if (time > stackSecond)
 			{
 				countFlag = false;
 				stackSecond += startSecond;
@@ -38,7 +40,7 @@ public class GameTime : MonoBehaviour
 		else if(startFlag)
 		{
 			Debug.Log("スタート!!");
-			if (Time.time > stackSecond)
+			if (time > stackSecond)
 			{
 				startFlag = false;
 				stackSecond += gameSecond;
@@ -47,7 +49,7 @@ public class GameTime : MonoBehaviour
 		else if(gameFlag)
 		{
 			Debug.Log("ゲーム終了まで：" + (stackSecond - (int)Time.time));
-			if (Time.time > stackSecond)
+			if (time > stackSecond)
 			{
 				gameFlag = false;
 				stackSecond += finishSecond;
@@ -58,15 +60,17 @@ public class GameTime : MonoBehaviour
 			Debug.Log("終了～");
 			if (Time.time > stackSecond)
 			{
-				SceneManager.LoadScene("ResultScene 1");
+				SceneManager.LoadScene("result 1");
 			}
 		}
+
+        time += Time.deltaTime;
 	}
 
 	// ゲームの残り時間の取得
 	public int GetCountSecond()
 	{
-		int mGameSecond = stackSecond - (int)Time.time;
+		int mGameSecond = stackSecond - (int)time;
 		if(mGameSecond < 0)
 		{
 			return 0;
