@@ -34,7 +34,15 @@ public class Player : MonoBehaviour
         for (int i = 0; i < pc.GetWallNum(); ++i)
 		{
 			giantFlag.Add(true);
-			wallBreakCounts.Add((i + 1) * 10);
+            if(i == 0)
+            {
+                wallBreakCounts.Add((i + 1) * 5);
+            }
+            else
+            {
+                wallBreakCounts.Add((i + 1) * (10 * i));
+            }
+
 		}
 	}
 
