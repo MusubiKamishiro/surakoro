@@ -37,7 +37,7 @@ public class Ibukuro : MonoBehaviour
     void Update()
     {
         enemyScore[0] = Check("RedScore");
-        enemyScore[1] = Check("BlueScore");
+        enemyScore[1] = Check("BrueScore");
         enemyScore[2] = Check("GreenScore");
         enemyScore[3] = Check("YellowScore");
         //ボーナスに入ったら

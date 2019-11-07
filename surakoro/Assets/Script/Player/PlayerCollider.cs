@@ -7,7 +7,7 @@ public class PlayerCollider : MonoBehaviour
 	public enum EnemyColor
 	{
 		Red = 0,
-		Blue,
+		Brue,
 		Green,
 		Yellow,
 		max

@@ -49,4 +49,4 @@ MonoBehaviour:
   - {fileID: 4751498011106815690, guid: feb7e0b0c73e34545b013aa916f2cf9d, type: 3}
   - {fileID: 7643745155904832602, guid: f6f9aa31d35fcad4697df10d5b1666d6, type: 3}
   mLight: {fileID: 0}
-  player: {fileID: 4365365286168654916, guid: 961bbb57b8f91a74ea7a85adda0f01a5, type: 3}
+  player: {fileID: 7358430172188414373, guid: 06c7f3583777bb445a5fbf48ce5bbe64, type: 3}
