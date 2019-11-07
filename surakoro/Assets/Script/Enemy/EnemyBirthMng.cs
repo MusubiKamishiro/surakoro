@@ -66,17 +66,22 @@ public class EnemyBirthMng : MonoBehaviour
             {
                 for (int j = 0; j < enemyBirthGroup[i].transform.childCount; j++)
                 {
-                    enemyBirthGroup[i].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().SetCountMax(enemyBirthGroup[i].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().GetCountMax() / slowSpawnRate[j]);
-                    enemyBirthGroup[i].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().SetEnemyMax(enemyBirthGroup[i].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().GetEnemyMax() * lowerEnemyMax[j]);
+                    enemyBirthGroup[i].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().SetCountMax(enemyBirthGroup[i].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().GetCountMax() / slowSpawnRate[i]);
+                    enemyBirthGroup[i].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().SetEnemyMax(enemyBirthGroup[i].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().GetEnemyMax() * lowerEnemyMax[i]);
+                    if (i + 1 < enemyBirthGroup.Length)
+                    {
+
+                        enemyBirthGroup[i + 1].transform.GetChild(j).gameObject.GetComponent<EnemyBirth>().SetSpawnFlag(true);
+                    }
                 }
-                if (i + 1 < enemyBirthGroup.Length)
-                {
-                
-                    enemyBirthGroup[i + 1].SetActive(true);
-                }
+               
                 enemyBirthGroup[i - 1].SetActive(false);
                 revertValueFlag[i] = true;
 
+            }
+            if (!player.GetGiantFlag(i))
+            {
+                enemyBirthGroup[i].SetActive(false);
             }
 
         }

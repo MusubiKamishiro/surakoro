@@ -87,13 +87,16 @@ public class EnemyBirth : MonoBehaviour
             {
                 continue;
             }
-            if (!obj.GetComponent<EnemyDieOrLife>().GetDieFlag()) continue;
+            if (obj.GetComponent<EnemyDieOrLife>().GetDieFlag())
+            {
+                continue;
+            }
             obj.GetComponent<SphereCollider>().enabled = false;
             var objPos = Camera.main.WorldToScreenPoint(obj.transform.position);
             if (objPos.y > Screen.height)
             {
                 Debug.Log("敵消す");
-                Destroy(obj);
+                Destroy(obj,0.1f);
             }
         }
     }
