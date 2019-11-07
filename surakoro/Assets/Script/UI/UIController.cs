@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
 
     private RectTransform canvasRectTfm;                        
     private RectTransform myRectTfm;                            // 追従するため用
-    private Vector3 offset = new Vector3(0, 1.5f, 0);           // 追従するキャラとの距離
+    private Vector3 offset = new Vector3(0, 3.5f, 0);           // 追従するキャラとの距離
 
     void Start()
     {

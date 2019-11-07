@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/TitleScene.unity
+    path: 
     guid: 87c714fdcbd7c364d8e655199394bbef
   - enabled: 1
     path: Assets/Scenes/Work/Siew Bin/in-Game 1.unity
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Work/yui/testScene.unity
     guid: 5c84a2cac3ba8ca4cbda4aa71625fc68
+  - enabled: 1
+    path: Assets/Scenes/Work/yutaro/ResultScene 1.unity
+    guid: 4eb91985e4468d942bfdca40120bea40
   m_configObjects: {}

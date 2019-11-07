@@ -11,8 +11,8 @@ public class GameTime : MonoBehaviour
 	private int finishSecond = 2;	// 終了の文字表示時間
 	private int stackSecond = 0;
 
-	private bool countFlag = true;
-	private bool startFlag = true;
+	public bool countFlag = true;
+	public bool startFlag = true;
 	private bool gameFlag = true;
 	private bool finishFlag = true;
 
@@ -58,7 +58,7 @@ public class GameTime : MonoBehaviour
 			Debug.Log("終了～");
 			if (Time.time > stackSecond)
 			{
-				SceneManager.LoadScene("testScene");
+				SceneManager.LoadScene("ResultScene 1");
 			}
 		}
 	}
