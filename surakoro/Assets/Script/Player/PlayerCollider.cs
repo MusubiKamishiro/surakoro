@@ -115,7 +115,6 @@ public class PlayerCollider : MonoBehaviour
 			{
 				wallBreakFlag[i] = true;
                 cameraMng.ZoomOut(i);
-                
 			}
 		}
 	}
