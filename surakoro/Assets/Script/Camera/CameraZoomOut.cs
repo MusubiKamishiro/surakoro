@@ -16,8 +16,8 @@ public class CameraZoomOut : MonoBehaviour
         camera = GetComponent<Camera>();
         cameraZoomOutNum[0] = 79;
         cameraZoomOutNum[1] = 170;
-        cameraZoomOutNum[2] = 350;
-        cameraZoomOutNum[3] = 700;
+        cameraZoomOutNum[2] = 300;
+        cameraZoomOutNum[3] = 350;
     }
 
     // Update is called once per frame

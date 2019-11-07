@@ -14,12 +14,24 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private Transform targetTfm;                                // 追従するキャラ
 
+
+    [SerializeField]
+    private GameObject mPlayer;       // プレイヤーオブジェクト
+
+    Player player;
+
     private RectTransform canvasRectTfm;                        
     private RectTransform myRectTfm;                            // 追従するため用
     private Vector3 offset = new Vector3(0, 3.5f, 0);           // 追従するキャラとの距離
 
+
+
     void Start()
     {
+        // プレイヤーを取得
+        mPlayer = GameObject.Find("Player 1");
+        player = mPlayer.GetComponent<Player>();
+
         // Componentを取得
         canvasRectTfm = canvas.GetComponent<RectTransform>();
         myRectTfm = GetComponent<RectTransform>();
@@ -30,29 +42,37 @@ public class UIController : MonoBehaviour
         // UIの座標
         Vector2 pos;
 
-        // キャンパスのモードによって切り替える
-        switch (canvas.renderMode)
+        if(player.GetGiantFlag(0))
         {
+            // キャンパスのモードによって切り替える
+            switch (canvas.renderMode)
+            {
 
-            case RenderMode.ScreenSpaceOverlay:
-                // キャラクターのワールド座標をスクリーン座標に変換
-                myRectTfm.position = RectTransformUtility.WorldToScreenPoint(Camera.main, targetTfm.position + offset);
+                case RenderMode.ScreenSpaceOverlay:
+                    // キャラクターのワールド座標をスクリーン座標に変換
+                    myRectTfm.position = RectTransformUtility.WorldToScreenPoint(Camera.main, targetTfm.position + offset);
 
-                break;
+                    break;
 
-            case RenderMode.ScreenSpaceCamera:
-                // キャラクターのワールド座標をスクリーン座標に変換
-                Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(Camera.main, targetTfm.position + offset);
-                // UIとキャラのスクリーン座標を照らし合わせる
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRectTfm, screenPos, Camera.main, out pos);
-                // 常についてくる
-                myRectTfm.localPosition = pos;
-                break;
+                case RenderMode.ScreenSpaceCamera:
+                    // キャラクターのワールド座標をスクリーン座標に変換
+                    Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(Camera.main, targetTfm.position + offset);
+                    // UIとキャラのスクリーン座標を照らし合わせる
+                    RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRectTfm, screenPos, Camera.main, out pos);
+                    // 常についてくる
+                    myRectTfm.localPosition = pos;
+                    break;
 
-            case RenderMode.WorldSpace:
-                myRectTfm.LookAt(Camera.main.transform);
+                case RenderMode.WorldSpace:
+                    myRectTfm.LookAt(Camera.main.transform);
 
-                break;
+                    break;
+            }
         }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
+
     }
 }

@@ -55,12 +55,13 @@ public class FadeScript : MonoBehaviour
     // アルファ値を更新し、0に達したらtrueを返す
     public bool FadeOut(float in_Time)
     {
-        alfa -= Time.deltaTime / in_Time;
+
+        alfa += Time.deltaTime / in_Time;
 
         // カラーを更新
-        fadeImg.color = new Color(fadeImg.color.r, fadeImg.color.g, fadeImg.color.b, alfa);
+        fadeImg.color = new Color(fadeImg.color.r, fadeImg.color.g, fadeImg.color.b, 1.0f - alfa);
 
-        if (alfa <= 0.0f)
+        if (alfa >= 1.0f)
         {
             return true;
         }
