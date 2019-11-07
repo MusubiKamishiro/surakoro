@@ -4636,7 +4636,7 @@
       <Radius>14</Radius>
     </Sphere>
   </Culling>
-  <ToolVersion>1.30</ToolVersion>
+  <ToolVersion>1.42a</ToolVersion>
   <Version>3</Version>
   <StartFrame>0</StartFrame>
   <EndFrame>210</EndFrame>

@@ -15,9 +15,8 @@ public class EnemyDieOrLife : MonoBehaviour
     GameObject stomachFloor;     // 胃の床
 
     [SerializeField]
-    float Scale;     // 胃の床
+    float Scale;                // キャラのサイズ
 
-    Vector3 bitween;
     bool dieFlag;
     bool stomachInFlag;
     float dieTime;
@@ -25,7 +24,6 @@ public class EnemyDieOrLife : MonoBehaviour
 
     void Start()
     {
-        bitween = Vector3.zero;
         dieFlag = false;
         stomachInFlag = false;
         dieTime = 0.0f;

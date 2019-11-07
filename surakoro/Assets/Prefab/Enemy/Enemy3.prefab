@@ -137,10 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac29ef5a52a5f844b377e94f58fb6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectPrefab: {fileID: 6041984170882861350, guid: e57073e7555a99d4e99f55164c2616de,
+  effectPrefab: {fileID: 6041984170882861350, guid: 39ff5e6cf10eeea469e418170f51c7fa,
     type: 3}
   stomachFloor: {fileID: 2562210429971975390, guid: abceee0bb2842384fbb8c6914f6da46b,
     type: 3}
+  Scale: 0
 --- !u!95 &8585967313002767871
 Animator:
   serializedVersion: 3
