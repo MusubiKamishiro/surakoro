@@ -14,7 +14,7 @@ public class CameraMng : MonoBehaviour
     void Start()
     {
         
-        zoomOutSize = new float[wallBreakNum] { 55,155,300 };
+        zoomOutSize = new float[wallBreakNum] { 75,155,350 };
         
     }
 
@@ -31,7 +31,7 @@ public class CameraMng : MonoBehaviour
         if (idx < wallBreakNum && idx >= currentZoomSize)
         {
             var sizeNow = mCamera.orthographicSize;
-            mCamera.orthographicSize = Mathf.Lerp(sizeNow, zoomOutSize[idx], 0.5f * Time.deltaTime);
+            mCamera.orthographicSize = Mathf.Lerp(sizeNow, zoomOutSize[idx], 1.0f * Time.deltaTime);
             currentZoomSize = idx;
         }
     }
