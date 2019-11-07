@@ -29,7 +29,7 @@ public class PostProcessing : MonoBehaviour
         {
             if (!player.GetGiantFlag(i))
             {
-                ChangeWeather(i + 1 % mPostVolume.Length);
+                ChangeWeather((i + 1) % mPostVolume.Length);
             }
         }
         //var timeNow = DateTime.Now;

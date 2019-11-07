@@ -36,6 +36,7 @@ public class EnemyDieOrLife : MonoBehaviour
         {
             // エネミーにエフェクトをつける
             effect = Instantiate(effectPrefab) as GameObject;
+            //effect.GetComponent<>
             // 飛んでくフラグを立てる
             dieFlag = true;
         }

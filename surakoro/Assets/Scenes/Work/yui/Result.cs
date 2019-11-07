@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,8 +8,8 @@ public class Result : MonoBehaviour
 	public GameObject player;
 	public GameObject enemyRed;
 	public GameObject enemyGreen;
-	public int redCount;
-	public int greenCount;
+	private int redCount;
+	private int greenCount;
 	private int totalEatCount;  // 食べた合計スライム数
 
 	bool flag = true;
@@ -20,9 +20,8 @@ public class Result : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		Ibukuro ibukuro = FindObjectOfType<Ibukuro>();
-		//redCount = ibukuro.EnemyScoreGet(0);
-		//greenCount = ibukuro.EnemyScoreGet(2);
+        redCount = Ibukuro.EnemyScoreGet(0);
+        greenCount = Ibukuro.EnemyScoreGet(2);
 		totalEatCount = redCount + greenCount;
 	}
 
@@ -72,7 +71,7 @@ public class Result : MonoBehaviour
 				--greenCount;
 			}
 			count = 0;
-			countMax *= 0.9f;
+			countMax *= 0.7f;
 		}
 	}
 }

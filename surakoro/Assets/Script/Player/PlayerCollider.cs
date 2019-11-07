@@ -7,7 +7,7 @@ public class PlayerCollider : MonoBehaviour
 	public enum EnemyColor
 	{
 		Red = 0,
-		Brue,
+		Blue,
 		Green,
 		Yellow,
 		max
@@ -60,7 +60,7 @@ public class PlayerCollider : MonoBehaviour
                 {
                     GetComponent<AudioSource>().PlayOneShot(GetComponent<Sound>().GetSE(1));
                     collision.rigidbody.isKinematic = false;
-                    collision.rigidbody.AddForceAtPosition(new Vector3(0, 0, Random.Range(-100, -1000)), new Vector3(0, 0, 0));
+                    collision.rigidbody.AddForceAtPosition(new Vector3(0, 0, Random.Range(-100, -1000) * (i*250)), new Vector3(0, 0, 0));
                 }
             }
 		}

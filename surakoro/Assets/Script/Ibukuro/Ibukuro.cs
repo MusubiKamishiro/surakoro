@@ -8,9 +8,8 @@ using UnityEngine;
 
 public class Ibukuro : MonoBehaviour
 {
-    private List<int> enemyScore = new List<int>();     // Ibukuroの中にあるエネミーScoreの数
-
-    int EnemyScoreGet(int i)
+    private static int[] enemyScore = new int[4];     // Ibukuroの中にあるエネミーScoreの数
+    public static int EnemyScoreGet(int i)
     {
         return enemyScore[i];
     }
@@ -41,8 +40,8 @@ public class Ibukuro : MonoBehaviour
         enemyScore[1] = Check("BlueScore");
         enemyScore[2] = Check("GreenScore");
         enemyScore[3] = Check("YellowScore");
-        // ボーナスに入ったら
-        if (capSensor.BonusFlag)
+        //ボーナスに入ったら
+        //if (capSensor.BonusFlag)
         {
             //ボーナス要素を追加したい（Scoreを増やす等）
         }
