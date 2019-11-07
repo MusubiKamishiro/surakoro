@@ -14,7 +14,7 @@ public class PlayerCollider : MonoBehaviour
 	};
 
 	private EnemyColor oldEnemyColor = EnemyColor.max;    // 最後に食べた敵の色
-	private int totalEatNum = 0;		// 敵を食べた総数
+	public int totalEatNum = 0;		// 敵を食べた総数
 	private int combo = 0;				// コンボ, 同じ色が連続で消えた場合
 	public const int addScore = 100;	// 加算スコア
 	private List<bool> wallBreakFlag = new List<bool>();
