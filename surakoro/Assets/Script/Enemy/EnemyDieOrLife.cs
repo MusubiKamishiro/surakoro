@@ -14,6 +14,9 @@ public class EnemyDieOrLife : MonoBehaviour
     [SerializeField]
     GameObject stomachFloor;     // 胃の床
 
+    [SerializeField]
+    float Scale;     // 胃の床
+
     Vector3 bitween;
     bool dieFlag;
     bool stomachInFlag;
@@ -56,7 +59,7 @@ public class EnemyDieOrLife : MonoBehaviour
                 this.tag = this.tag + "Score";
                 this.GetComponent<Rigidbody>().useGravity = true;
                 this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                this.transform.localScale = this.transform.localScale * 0.2f;
+                this.transform.localScale = this.transform.localScale * Scale;
                 this.transform.position = stomachFloor.transform.position + new Vector3(0.0f, 15.0f, 0.0f);
             }
         }

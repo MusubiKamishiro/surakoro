@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    GameObject wallBreakEffect;
+
+    [SerializeField]
+    List<float> gravity = new List<float>();
+
+
+
     private float speed = 1.5f;     // デバッグ用のプレイヤー移動速度
-    public Vector3 growingSize = new Vector3(20, 20, 0);	// 敵を食べて大きくなるサイズ
-	private List<bool> giantFlag = new List<bool>();		// 巨大化の段階
-	private List<int> wallBreakCounts = new List<int>();
+    public Vector3 growingSize = new Vector3(20, 20, 0);    // 敵を食べて大きくなるサイズ
+    private List<bool> giantFlag = new List<bool>();        // 巨大化の段階
+    private List<int> wallBreakCounts = new List<int>();
 	private float secondCount = 0;
-    Rigidbody rigidbody;
 
     public Vector3 GetGrowingSize()
 	{
@@ -23,7 +30,6 @@ public class Player : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
 		PlayerCollider pc = FindObjectOfType<PlayerCollider>();
         for (int i = 0; i < pc.GetWallNum(); ++i)
 		{
@@ -39,16 +45,29 @@ public class Player : MonoBehaviour
 
     private void SetLocalGravity()
     {
-        float grav;
-        if (giantFlag[4])
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        float grav = 0;
+        if (!giantFlag[4])
         {
-            grav = -50.0f;
+            grav = gravity[4];
         }
-        else
+        else if (!giantFlag[3])
         {
-            grav = -30.0f;
+            grav = gravity[3];
         }
-        rigidbody.AddForce(new Vector3(0.0f, -50.0f, 0.0f), ForceMode.Acceleration);
+        else if (!giantFlag[2])
+        {
+            grav = gravity[2];
+        }
+        else if (!giantFlag[1])
+        {
+            grav = gravity[1];
+        }
+        else if (!giantFlag[0])
+        {
+            grav = gravity[0];
+        }
+        rigidbody.AddForce(new Vector3(0.0f, grav, 0.0f), ForceMode.Acceleration);
     }
 
     // Update is called once per frame
@@ -63,7 +82,8 @@ public class Player : MonoBehaviour
 				if (giantFlag[i])
 				{
 					Giant(i);
-				}
+                    wallBreakEffect.transform.position = this.transform.position;
+                }
 			}
 		}
     }
