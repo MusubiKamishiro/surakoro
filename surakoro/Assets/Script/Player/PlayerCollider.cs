@@ -19,6 +19,8 @@ public class PlayerCollider : MonoBehaviour
 	public const int addScore = 100;	// 加算スコア
 	private List<bool> wallBreakFlag = new List<bool>();
 	private int wallNum = 5;
+    [SerializeField]
+    CameraMng cameraMng;
 
 	Score score = new Score();
 
@@ -52,15 +54,15 @@ public class PlayerCollider : MonoBehaviour
 		{
 			if (wallBreakFlag[i])
 			{
-				string mWallName = "Wall" + (i + 1).ToString();
+                string mWallName = "Wall" + (i + 1).ToString();
 
-				if (collision.gameObject.CompareTag(mWallName))
-				{
-				
-					collision.rigidbody.isKinematic = false;
-					collision.rigidbody.AddForceAtPosition(new Vector3(0, 0, Random.Range(-100, -1000)), new Vector3(0, 0, 0));
-				}
-			}
+                if (collision.gameObject.CompareTag(mWallName))
+                {
+                    GetComponent<AudioSource>().PlayOneShot(GetComponent<Sound>().GetSE(1));
+                    collision.rigidbody.isKinematic = false;
+                    collision.rigidbody.AddForceAtPosition(new Vector3(0, 0, Random.Range(-100, -1000)), new Vector3(0, 0, 0));
+                }
+            }
 		}
 	}
 
@@ -112,6 +114,8 @@ public class PlayerCollider : MonoBehaviour
 			if(!mP.GetGiantFlag(i))
 			{
 				wallBreakFlag[i] = true;
+                cameraMng.ZoomOut(i);
+                
 			}
 		}
 	}

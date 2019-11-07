@@ -5,12 +5,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Sound : MonoBehaviour
 {
 
-    //[SerializeField]
-    //AudioClip soundEffect;           // SEの音源
+    [SerializeField]
+    AudioClip[] extraEffect;           // SEの音源
+    DateTime startPlayingTime; //SE開始時間
+    bool playingFlag = false;  //SE流しているか
 
     AudioSource audioSource;    // SEを鳴らす用
 
@@ -32,8 +35,37 @@ public class Sound : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-         Destroy(col.gameObject);
-         audioSource.PlayOneShot(audioSource.clip);
-        
+        //エネミーレイヤー
+        if (col.gameObject.layer == 9)
+        {
+            audioSource.PlayOneShot(audioSource.clip);
+        }
+    }
+
+    public void PlayWithoutOverlap(int idx)
+    {
+        if (!playingFlag)
+        {
+            startPlayingTime = DateTime.UtcNow;
+            audioSource.PlayOneShot(extraEffect[idx]);
+            playingFlag = true;
+        }
+        else
+        {            
+            if ((DateTime.UtcNow - startPlayingTime).Seconds > extraEffect[idx].length/2)
+            {
+                playingFlag = false;
+            }
+        }
+    }
+
+    public void PlayWithOverlap(int idx)
+    {
+        audioSource.PlayOneShot(extraEffect[idx]);
+    }
+
+    public AudioClip GetSE(int idx)
+    {
+        return extraEffect[idx];
     }
 }

@@ -18,7 +18,8 @@ public class EnemyBirth : MonoBehaviour
 
     [SerializeField]
     int allEnemyMax;    // 全体で敵が出てくる数の上限
-
+    bool spawnFlag = true;
+ 
     // Use this for initialization
     void Start()
     {
@@ -28,11 +29,11 @@ public class EnemyBirth : MonoBehaviour
     void Update()
     {
         // 出るかどうかのためし
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Cubeプレハブを元に、インスタンスを生成、
-            Instantiate(enemy, this.transform.position, Quaternion.identity);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    // Cubeプレハブを元に、インスタンスを生成、
+        //    Instantiate(enemy, this.transform.position, Quaternion.identity);
+        //}
         //敵が上限にいってないか
         if(GameObject.FindGameObjectsWithTag("Enemy").Length < allEnemyMax)
         {
@@ -41,10 +42,35 @@ public class EnemyBirth : MonoBehaviour
         // カウントでどれくらいの感覚で出てくるか
         if(count >= countMax)
         {
-            // Cubeプレハブを元に、インスタンスを生成
-            Instantiate(enemy, this.transform.position, Quaternion.identity);
-            count = 0;
+            if (spawnFlag)
+            {
+                // Cubeプレハブを元に、インスタンスを生成
+                Instantiate(enemy, this.transform.position, Quaternion.identity);
+                count = 0;
+            }
         }
+       
+    }
+    public float GetCountMax()
+    {
+        return countMax;
+    }
+    public int GetEnemyMax()
+    {
+        return allEnemyMax;
     }
 
+    public void SetCountMax(float idx)
+    {
+        countMax = idx;
+    }
+    public void SetEnemyMax(int idx)
+    {
+        allEnemyMax = idx;
+    }
+
+    public void SetSpawnFlag(bool flag)
+    {
+        spawnFlag = flag;
+    }
 }
