@@ -12,7 +12,7 @@ public class Result : MonoBehaviour
 	public int greenCount;
 	private int totalEatCount;  // 食べた合計スライム数
 
-	bool flag = true;
+	public bool flag = true;
 
 	float count;
 	float countMax = 1.0f;
