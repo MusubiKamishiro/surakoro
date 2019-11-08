@@ -140,4 +140,4 @@ MonoBehaviour:
     type: 3}
   stomachFloor: {fileID: 2562210429971975390, guid: abceee0bb2842384fbb8c6914f6da46b,
     type: 3}
-  Scale: 0
+  Scale: 0.1
